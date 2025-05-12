@@ -3,337 +3,319 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pianificazione Gantt - Dreamwear</title>
-    <link rel="stylesheet" href="../style.css">
-    <link rel="stylesheet" href="../css/gant.css">
+    <title>Pianificazione Progetto (Gantt) - Dreamwear</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <!-- AOS CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../css/custom.css">
 </head>
 <body>
     <header>
-        <h1>Progetto Dreamwear: Implementazione ERP Ad Hoc Revolution</h1>
-        <nav class="main-nav">
-            <ul>
-                <li><a href="../index.html">Presentazione Progetto</a></li>
-                <li><a href="assessment_as_is.html">Assessment AS-IS</a></li>
-                <li><a href="gap_analysis_solution.html">Gap Analysis & Soluzioni</a></li>
-                <li><a href="struttura_database.html">Struttura Database</a></li>
-                <li><a href="pianificazione_gantt.html" class="active">Pianificazione (Gantt)</a></li>
-            </ul>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
+            <div class="container">
+                <a class="navbar-brand" href="../index.html">Progetto Dreamwear</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="../index.html">Presentazione</a></li>
+                        <li class="nav-item"><a class="nav-link" href="assessment_as_is.html">Assessment</a></li>
+                        <li class="nav-item"><a class="nav-link" href="gap_analysis_solution.html">Gap Analysis</a></li>
+                        <li class="nav-item"><a class="nav-link" href="struttura_database.html">Database</a></li>
+                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="pianificazione_gantt.html">Pianificazione</a></li>
+                    </ul>
+                </div>
+            </div>
         </nav>
     </header>
 
-    <main>
-        <section id="gantt">
-            <h2>Pianificazione del Progetto (Diagramma di Gantt)</h2>
-            <div class="content-container">
-                 <div class="description">
-                    <p>La pianificazione temporale del progetto è cruciale per monitorare l'avanzamento e rispettare le scadenze. La tabella sottostante rappresenta il diagramma di Gantt del progetto Dreamwear, mostrando le attività principali (Work Breakdown Structure - WBS), i responsabili, le durate stimate e la collocazione temporale lungo i mesi di Maggio, Giugno, Luglio e Agosto, suddivisi per settimane.</p>
-                 </div>
-                 <div class="gantt-chart-container">
-<table class="gantt-table">
-    <thead>
-        <tr>
-            <th rowspan="2" class="task-info">ID</th>
-            <th rowspan="2" class="task-name">Work Breakdown Structure - Attività</th>
-            <th rowspan="2" class="task-resp">Resp.</th>
-            <th rowspan="2" class="task-details">Dur. (gg)</th>
-            <th colspan="4" class="timeline-month">Maggio</th>
-            <th colspan="4" class="timeline-month">Giugno</th>
-            <th colspan="4" class="timeline-month">Luglio</th>
-            <th colspan="4" class="timeline-month">Agosto</th>
-        </tr>
-        <tr>
-            <!-- Settimane Maggio -->
-            <th class="timeline-week">1</th><th class="timeline-week">2</th><th class="timeline-week">3</th><th class="timeline-week">4</th>
-            <!-- Settimane Giugno -->
-            <th class="timeline-week">1</th><th class="timeline-week">2</th><th class="timeline-week">3</th><th class="timeline-week">4</th>
-            <!-- Settimane Luglio -->
-            <th class="timeline-week">1</th><th class="timeline-week">2</th><th class="timeline-week">3</th><th class="timeline-week">4</th>
-            <!-- Settimane Agosto -->
-            <th class="timeline-week">1</th><th class="timeline-week">2</th><th class="timeline-week">3</th><th class="timeline-week">4</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr class="phase-summary">
-            <td>1</td><td>CONFIGURAZIONE AMBIENTI</td><td>Luca Zaletti</td><td>15</td>
-            <td></td><td></td><td></td><td></td>
-            <td></td><td></td><td></td><td></td>
-            <td></td><td></td><td></td><td></td>
-            <td></td><td></td><td></td><td></td>
-        </tr>
-        <tr class="sub-task">
-            <td>1.1</td><td>Ambiente Test</td><td>L.Zaletti</td><td>5</td>
-            <td class="resp-zaletti"></td><td></td><td></td><td></td>
-            <td></td><td></td><td></td><td></td>
-            <td></td><td></td><td></td><td></td>
-            <td></td><td></td><td></td><td></td>
-        </tr>
-        <tr class="sub-task">
-            <td>1.2</td><td>Ambiente Produzione</td><td>L.Zaletti</td><td>10</td>
-            <td></td><td class="resp-zaletti"></td><td class="resp-zaletti"></td><td></td>
-            <td class="resp-zaletti"></td><td></td><td></td><td></td>
-            <td></td><td></td><td></td><td></td>
-            <td></td><td></td><td></td><td></td>
-        </tr>
-        <tr class="phase-summary">
-            <td>2</td><td>ANALISI</td><td>Ruben Mortari</td><td>15</td>
-            <td></td><td></td><td></td><td></td>
-            <td></td><td></td><td></td><td></td>
-            <td></td><td></td><td></td><td></td>
-            <td></td><td></td><td></td><td></td>
-        </tr>
-        <tr class="sub-task">
-            <td>2.1</td><td>ANALISI FUNZIONALE</td><td>R.Mortari</td><td>15</td>
-            <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-        </tr>
-        <tr class="sub-task" style="font-size:0.7em;">
-            <td>2.1.1</td><td>Coge</td><td>R.M.</td><td>5</td>
-            <td class="resp-mortari"></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-        </tr>
-        <tr class="sub-task" style="font-size:0.7em;">
-            <td>2.1.2</td><td>Finanze</td><td>R.M.</td><td>5</td>
-            <td class="resp-mortari"></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-        </tr>
-        <tr class="sub-task" style="font-size:0.7em;">
-            <td>2.1.3</td><td>Ciclo Attivo</td><td>R.M.</td><td>5</td>
-            <td></td><td class="resp-mortari"></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-        </tr>
-        <tr class="sub-task" style="font-size:0.7em;">
-            <td>2.1.4</td><td>Ciclo Passivo</td><td>R.M.</td><td>5</td>
-            <td></td><td></td><td class="resp-mortari"></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-        </tr>
-        <tr class="sub-task" style="font-size:0.7em;">
-            <td>2.1.5</td><td>Magazzino</td><td>R.M.</td><td>5</td>
-            <td></td><td></td><td class="resp-mortari"></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-        </tr>
-        <tr class="sub-task" style="font-size:0.7em;">
-            <td>2.1.6</td><td>E commerce</td><td>R.M.</td><td>5</td>
-            <td></td><td></td><td></td><td class="resp-mortari"></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-        </tr>
-         <tr class="sub-task">
-            <td>2.2</td><td>GAP ANALYSIS</td><td>R.Mortari</td><td>15</td>
-            <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-        </tr>
-        <tr class="sub-task" style="font-size:0.7em;">
-            <td>2.2.1</td><td>Interfaccia Commercialista</td><td>R.M.</td><td>5</td>
-             <td></td><td class="resp-mortari"></td><td></td><td></td>
-             <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-        </tr>
-        <tr class="sub-task" style="font-size:0.7em;">
-            <td>2.2.2</td><td>Gestione taglie e colori</td><td>R.M.</td><td>5</td>
-             <td></td><td></td><td class="resp-mortari"></td><td></td>
-             <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-        </tr>
-         <tr class="sub-task" style="font-size:0.7em;">
-            <td>2.2.3</td><td>Gestione valuta</td><td>R.M.</td><td>5</td>
-             <td></td><td></td><td class="resp-mortari"></td><td></td>
-             <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-        </tr>
-         <tr class="sub-task" style="font-size:0.7em;">
-            <td>2.2.4</td><td>Interfaccia E Commerce</td><td>R.M.</td><td>5</td>
-             <td></td><td></td><td></td><td class="resp-mortari"></td>
-             <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-        </tr>
-         <tr class="sub-task" style="font-size:0.7em;">
-            <td>2.2.5</td><td>Importazione cambi giornalieri</td><td>R.M.</td><td>5</td>
-             <td></td><td></td><td></td><td class="resp-mortari"></td>
-             <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-        </tr>
+    <main class="container mt-5 pt-5">
+        <div class="text-center mb-5" data-aos="fade-down">
+            <h1 class="display-5">Pianificazione del Progetto (Diagramma di Gantt)</h1>
+        </div>
 
-        <tr class="phase-summary">
-            <td>3</td><td>SVILUPPO</td><td>Maria Pacchioni</td><td>15</td>
-            <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-        </tr>
-         <tr class="sub-task" style="font-size:0.7em;">
-            <td>3.1</td><td>Interfaccia Commercialista</td><td>M.P.</td><td>5</td>
-             <td></td><td class="resp-pacchioni"></td><td></td><td></td>
-             <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-        </tr>
-         <tr class="sub-task" style="font-size:0.7em;">
-            <td>3.2</td><td>Gestione taglie e colori</td><td>M.P.</td><td>5</td>
-             <td></td><td></td><td class="resp-pacchioni"></td><td></td>
-             <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-        </tr>
-         <tr class="sub-task" style="font-size:0.7em;">
-            <td>3.3</td><td>Gestione valuta</td><td>M.P.</td><td>5</td>
-             <td></td><td></td><td class="resp-pacchioni"></td><td></td>
-             <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-        </tr>
-         <tr class="sub-task" style="font-size:0.7em;">
-            <td>3.4</td><td>Interfaccia E Commerce</td><td>M.P.</td><td>5</td>
-             <td></td><td></td><td></td><td class="resp-pacchioni"></td>
-             <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-        </tr>
-         <tr class="sub-task" style="font-size:0.7em;">
-            <td>3.5</td><td>Importazione cambi giornalieri</td><td>M.P.</td><td>5</td>
-             <td></td><td></td><td></td><td class="resp-pacchioni"></td>
-             <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-        </tr>
+        <section id="gantt-chart-section" data-aos="fade-up">
+            <div class="card shadow-sm">
+                <div class="card-header bg-primary text-white">
+                    <h3 class="mb-0">Diagramma di Gantt Interattivo (Esempio)</h3>
+                </div>
+                <div class="card-body">
+                    <p>Il diagramma di Gantt seguente illustra le principali fasi e attività pianificate per l'implementazione del progetto ERP Dreamwear. Le durate sono indicative e soggette a revisione.</p>
+                    <div id="gantt-container" class="mt-3">
+                        <svg id="gantt-svg"></svg>
+                    </div>
+                    <p class="mt-3 text-muted"><small>Nota: Questo è un Gantt semplificato a scopo illustrativo.</small></p>
+                </div>
+            </div>
+        </section>
 
-        <tr class="phase-summary">
-            <td>4</td><td>CONFIGURAZIONI</td><td>Alessandro Barresi</td><td>15</td>
-             <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-        </tr>
-         <tr class="sub-task" style="font-size:0.7em;">
-            <td>4.1</td><td>Coge</td><td>A.B.</td><td>5</td>
-             <td></td><td class="resp-barresi"></td><td></td><td></td>
-             <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-        </tr>
-         <tr class="sub-task" style="font-size:0.7em;">
-            <td>4.2</td><td>Finanze</td><td>A.B.</td><td>5</td>
-             <td></td><td class="resp-barresi"></td><td></td><td></td>
-             <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-        </tr>
-         <tr class="sub-task" style="font-size:0.7em;">
-            <td>4.3</td><td>Ciclo Attivo</td><td>A.B.</td><td>5</td>
-             <td></td><td></td><td class="resp-barresi"></td><td></td>
-             <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-        </tr>
-         <tr class="sub-task" style="font-size:0.7em;">
-            <td>4.4</td><td>Ciclo Passivo</td><td>A.B.</td><td>5</td>
-             <td></td><td></td><td class="resp-barresi"></td><td></td>
-             <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-        </tr>
-         <tr class="sub-task" style="font-size:0.7em;">
-            <td>4.5</td><td>Magazzino</td><td>A.B.</td><td>5</td>
-             <td></td><td></td><td></td><td class="resp-barresi"></td>
-             <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-        </tr>
-         <tr class="sub-task" style="font-size:0.7em;">
-            <td>4.6</td><td>E commerce</td><td>A.B.</td><td>5</td>
-             <td></td><td></td><td></td><td class="resp-barresi"></td>
-             <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-        </tr>
-
-        <tr class="phase-summary">
-            <td>5</td><td>TEST</td><td>Davide Sangaletti</td><td>15</td>
-            <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-        </tr>
-         <tr class="sub-task" style="font-size:0.7em;">
-            <td>5.1</td><td>Interfaccia Commercialista</td><td>D.S.</td><td>5</td>
-             <td></td><td></td><td class="resp-sangaletti"></td><td></td>
-             <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-        </tr>
-         <tr class="sub-task" style="font-size:0.7em;">
-            <td>5.2</td><td>Gestione taglie e colori</td><td>D.S.</td><td>5</td>
-             <td></td><td></td><td></td><td class="resp-sangaletti"></td>
-             <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-        </tr>
-         <tr class="sub-task" style="font-size:0.7em;">
-            <td>5.3</td><td>Gestione valuta</td><td>D.S.</td><td>5</td>
-             <td></td><td></td><td></td><td class="resp-sangaletti"></td>
-             <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-        </tr>
-         <tr class="sub-task" style="font-size:0.7em;">
-            <td>5.4</td><td>Interfaccia E Commerce</td><td>D.S.</td><td>5</td>
-             <td></td><td></td><td></td><td></td>
-             <td class="resp-sangaletti"></td><td></td><td></td><td></td>
-             <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-        </tr>
-
-        <tr class="phase-summary">
-            <td>6</td><td>IMPORT</td><td>Rajaa El Arsaoui</td><td>20</td>
-            <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-        </tr>
-         <tr class="sub-task">
-            <td>6.1</td><td>Piano dei Conti</td><td>R.E.A</td><td>5</td>
-            <td></td><td></td><td></td><td></td>
-            <td class="resp-arsaoui"></td><td></td><td></td><td></td>
-            <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-        </tr>
-         <tr class="sub-task">
-            <td>6.2</td><td>Clienti/Fornitori</td><td>R.E.A</td><td>5</td>
-            <td></td><td></td><td></td><td></td>
-            <td class="resp-arsaoui"></td><td></td><td></td><td></td>
-            <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-        </tr>
-        <tr class="sub-task">
-            <td>6.3</td><td>Articoli</td><td>R.E.A</td><td>10</td>
-            <td></td><td></td><td></td><td></td>
-            <td></td><td class="resp-arsaoui"></td><td class="resp-arsaoui"></td><td></td>
-            <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-        </tr>
-        <tr class="sub-task">
-            <td>6.4</td><td>Saldi Articoli</td><td>R.E.A</td><td>10</td>
-            <td></td><td></td><td></td><td></td>
-            <td></td><td></td><td></td><td class="resp-arsaoui"></td>
-            <td class="resp-arsaoui"></td><td></td><td></td><td></td>
-            <td></td><td></td><td></td><td></td>
-        </tr>
-         <tr class="sub-task">
-            <td>6.5</td><td>Saldi Contabili/Scadenze</td><td>R.E.A</td><td>10</td>
-            <td></td><td></td><td></td><td></td>
-            <td></td><td></td><td></td><td></td>
-            <td class="resp-arsaoui"></td><td class="resp-arsaoui"></td><td></td><td></td>
-            <td></td><td></td><td></td><td></td>
-        </tr>
-
-        <tr class="phase-summary">
-            <td>7</td><td>FORMAZIONE</td><td>Emanuele Monaci</td><td>20</td>
-            <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-        </tr>
-        <tr class="sub-task" style="font-size:0.7em;">
-            <td>7.1</td><td>Coge</td><td>E.M.</td><td>20</td>
-            <td></td><td></td><td></td><td></td>
-            <td></td><td></td><td class="resp-monaci"></td><td class="resp-monaci"></td>
-            <td class="resp-monaci"></td><td class="resp-monaci"></td><td class="resp-monaci"></td><td></td>
-            <td></td><td></td><td></td><td></td>
-        </tr>
-        <tr class="sub-task" style="font-size:0.7em;">
-            <td>7.2</td><td>Finanze</td><td>E.M.</td><td>20</td>
-             <td></td><td></td><td></td><td></td>
-            <td></td><td></td><td class="resp-monaci"></td><td class="resp-monaci"></td>
-            <td class="resp-monaci"></td><td class="resp-monaci"></td><td class="resp-monaci"></td><td></td>
-            <td></td><td></td><td></td><td></td>
-        </tr>
-        <tr class="sub-task" style="font-size:0.7em;">
-            <td>7.3</td><td>Ciclo Attivo</td><td>E.M.</td><td>20</td>
-             <td></td><td></td><td></td><td></td>
-            <td></td><td></td><td class="resp-monaci"></td><td class="resp-monaci"></td>
-            <td class="resp-monaci"></td><td class="resp-monaci"></td><td class="resp-monaci"></td><td></td>
-            <td></td><td></td><td></td><td></td>
-        </tr>
-        <tr class="sub-task" style="font-size:0.7em;">
-            <td>7.4</td><td>Ciclo Passivo</td><td>E.M.</td><td>20</td>
-             <td></td><td></td><td></td><td></td>
-            <td></td><td></td><td class="resp-monaci"></td><td class="resp-monaci"></td>
-            <td class="resp-monaci"></td><td class="resp-monaci"></td><td class="resp-monaci"></td><td></td>
-            <td></td><td></td><td></td><td></td>
-        </tr>
-        <tr class="sub-task" style="font-size:0.7em;">
-            <td>7.5</td><td>Magazzino</td><td>E.M.</td><td>20</td>
-             <td></td><td></td><td></td><td></td>
-            <td></td><td></td><td class="resp-monaci"></td><td class="resp-monaci"></td>
-            <td class="resp-monaci"></td><td class="resp-monaci"></td><td class="resp-monaci"></td><td></td>
-            <td></td><td></td><td></td><td></td>
-        </tr>
-        <tr class="sub-task" style="font-size:0.7em;">
-            <td>7.6</td><td>E commerce</td><td>E.M.</td><td>10</td>
-             <td></td><td></td><td></td><td></td>
-            <td></td><td></td><td class="resp-monaci"></td><td class="resp-monaci"></td>
-            <td class="resp-monaci"></td><td></td><td></td><td></td>
-            <td></td><td></td><td></td><td></td>
-        </tr>
-
-        <tr class="phase-summary">
-            <td>8</td><td>GO LIVE</td><td>Youssef</td><td>20</td>
-            <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-        </tr>
-         <tr class="sub-task">
-            <td>8.1</td><td>Presidio</td><td>Youssef</td><td>10</td>
-            <td></td><td></td><td></td><td></td>
-            <td></td><td></td><td></td><td></td>
-            <td></td><td></td><td></td><td class="resp-youssef"></td>
-            <td class="resp-youssef"></td><td></td><td></td><td></td>
-        </tr>
-    </tbody>
-</table>
-                 </div>
+        <section id="gantt-details" class="mt-5" data-aos="fade-up">
+            <div class="card shadow-sm">
+                 <div class="card-header">
+                    <h3 class="mb-0">Dettaglio Fasi del Gantt</h3>
+                </div>
+                <div class="card-body">
+                    <div class="accordion" id="ganttAccordion">
+                        <!-- Fase 1 -->
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingOne">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                    Fase 1: Analisi e Pianificazione (Settimane 1-4)
+                                </button>
+                            </h2>
+                            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#ganttAccordion">
+                                <div class="accordion-body">
+                                    <ul>
+                                        <li><strong>Kick-off Meeting e Definizione Team:</strong> Presentazione ufficiale, allineamento obiettivi, definizione ruoli e responsabilità. (S1)</li>
+                                        <li><strong>Raccolta Requisiti Dettagliata (Assessment AS-IS):</strong> Interviste, workshop con i key user per mappare i processi attuali e identificare le esigenze specifiche. (S1-S2)</li>
+                                        <li><strong>Analisi Funzionalità Ad Hoc Revolution:</strong> Studio approfondito delle capacità standard del gestionale in relazione ai requisiti. (S2-S3)</li>
+                                        <li><strong>Redazione Documento di Assessment:</strong> Formalizzazione dell'analisi AS-IS e dei requisiti. (S3)</li>
+                                        <li><strong>Gap Analysis:</strong> Identificazione degli scostamenti tra AS-IS e funzionalità standard, definizione dei gap da colmare. (S3-S4)</li>
+                                        <li><strong>Definizione Soluzioni TO-BE:</strong> Progettazione delle configurazioni, personalizzazioni e procedure per raggiungere gli obiettivi. (S4)</li>
+                                        <li><strong>Redazione Documento di Gap Analysis e Soluzioni:</strong> Formalizzazione delle soluzioni TO-BE. (S4)</li>
+                                        <li><strong>Approvazione e Pianificazione Implementazione:</strong> Revisione e approvazione dei documenti, finalizzazione del piano di progetto. (S4)</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Fase 2 -->
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingTwo">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                    Fase 2: Configurazione e Sviluppo (Settimane 5-12)
+                                </button>
+                            </h2>
+                            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#ganttAccordion">
+                                <div class="accordion-body">
+                                    <ul>
+                                        <li><strong>Setup Ambiente di Test Ad Hoc:</strong> Installazione e configurazione iniziale del sistema in ambiente di test. (S5)</li>
+                                        <li><strong>Configurazione Moduli Standard:</strong> Parametrizzazione anagrafiche, ciclo attivo/passivo base, contabilità base. (S5-S7)</li>
+                                        <li><strong>Sviluppo Personalizzazioni (se necessarie):</strong> Realizzazione di eventuali script, report custom, integrazioni specifiche identificate nella Gap Analysis. (S7-S10)</li>
+                                        <li><strong>Migrazione Dati Iniziale (Anagrafiche Principali):</strong> Estrazione, trasformazione e caricamento (ETL) delle anagrafiche clienti, fornitori, articoli. (S8-S9)</li>
+                                        <li><strong>Test Interni Tecnici:</strong> Verifiche funzionali delle configurazioni e personalizzazioni da parte del team di progetto. (S10-S11)</li>
+                                        <li><strong>Formazione Utenti Chiave (Key Users):</strong> Training approfondito ai responsabili di processo sull'utilizzo del nuovo sistema. (S11-S12)</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Fase 3 -->
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingThree">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                    Fase 3: Test, Formazione e Go-Live (Settimane 13-16)
+                                </button>
+                            </h2>
+                            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#ganttAccordion">
+                                <div class="accordion-body">
+                                    <ul>
+                                        <li><strong>User Acceptance Test (UAT):</strong> Test condotti dagli utenti chiave per validare la rispondenza del sistema ai requisiti. (S13-S14)</li>
+                                        <li><strong>Correzione Bug e Rifiniture:</strong> Risoluzione delle problematiche emerse durante gli UAT. (S14)</li>
+                                        <li><strong>Formazione Utenti Finali:</strong> Training a tutti gli utenti che utilizzeranno il sistema. (S14-S15)</li>
+                                        <li><strong>Migrazione Dati Finale:</strong> Caricamento dei saldi contabili, ordini aperti, etc. (S15)</li>
+                                        <li><strong>Preparazione al Go-Live:</strong> Checklist finale, backup sistema attuale, definizione piano di cut-over. (S15)</li>
+                                        <li><strong>Go-Live:</strong> Avvio del nuovo sistema in produzione. (Inizio S16)</li>
+                                        <li><strong>Supporto Post Go-Live Iniziale:</strong> Assistenza intensiva agli utenti nelle prime settimane di utilizzo. (S16 e successive)</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
     </main>
 
-    <footer>
-        <p>&copy; 2024 Gruppo Progetto Sistemi Informativi - Implementazione ERP Dreamwear</p>
+    <footer class="bg-dark text-white text-center py-3 mt-5">
+        <div class="container">
+            <p class="mb-0">&copy; 2024 Gruppo Progetto Sistemi Informativi - Implementazione ERP Dreamwear</p>
+        </div>
     </footer>
+
+    <!-- Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <!-- AOS JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- D3.js and Gantt Chart Script -->
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            once: true,
+        });
+
+        // Gantt Chart Data (esempio)
+        const tasks = [
+            { id: '1', name: 'Fase 1: Analisi e Pianificazione', start: '2024-01-01', end: '2024-01-28', progress: 100, dependencies: '' },
+            { id: '1.1', name: 'Kick-off & Team', start: '2024-01-01', end: '2024-01-07', progress: 100, dependencies: '', parent: '1' },
+            { id: '1.2', name: 'Raccolta Requisiti', start: '2024-01-01', end: '2024-01-14', progress: 100, dependencies: '1.1', parent: '1' },
+            { id: '1.3', name: 'Analisi Ad Hoc', start: '2024-01-08', end: '2024-01-21', progress: 80, dependencies: '1.2', parent: '1' },
+            { id: '1.4', name: 'Doc Assessment', start: '2024-01-15', end: '2024-01-21', progress: 100, dependencies: '1.2', parent: '1' },   
+            { id: '1.5', name: 'Gap Analysis', start: '2024-01-15', end: '2024-01-28', progress: 70, dependencies: '1.3,1.4', parent: '1' },
+            { id: '1.6', name: 'Definizione TO-BE', start: '2024-01-22', end: '2024-01-28', progress: 50, dependencies: '1.5', parent: '1' },
+            
+            { id: '2', name: 'Fase 2: Config. & Sviluppo', start: '2024-01-29', end: '2024-03-24', progress: 20, dependencies: '1' },
+            { id: '2.1', name: 'Setup Ambiente Test', start: '2024-01-29', end: '2024-02-04', progress: 100, dependencies: '1.6', parent: '2' },
+            { id: '2.2', name: 'Config. Moduli Std', start: '2024-01-29', end: '2024-02-18', progress: 40, dependencies: '2.1', parent: '2' },
+            { id: '2.3', name: 'Sviluppo Custom', start: '2024-02-12', end: '2024-03-10', progress: 10, dependencies: '2.2', parent: '2' },
+            { id: '2.4', name: 'Migrazione Dati Iniziale', start: '2024-02-19', end: '2024-03-03', progress: 0, dependencies: '2.2', parent: '2' },
+            { id: '2.5', name: 'Test Interni', start: '2024-03-11', end: '2024-03-17', progress: 0, dependencies: '2.3,2.4', parent: '2' },
+            { id: '2.6', name: 'Formazione Key Users', start: '2024-03-18', end: '2024-03-24', progress: 0, dependencies: '2.5', parent: '2' },
+
+            { id: '3', name: 'Fase 3: Test, Formazione & Go-Live', start: '2024-03-25', end: '2024-04-21', progress: 0, dependencies: '2' },
+            { id: '3.1', name: 'UAT', start: '2024-03-25', end: '2024-04-07', progress: 0, dependencies: '2.6', parent: '3' },
+            { id: '3.2', name: 'Correzione Bug', start: '2024-04-01', end: '2024-04-07', progress: 0, dependencies: '3.1', parent: '3' },
+            { id: '3.3', name: 'Formazione Utenti Finali', start: '2024-04-08', end: '2024-04-14', progress: 0, dependencies: '3.2', parent: '3' },
+            { id: '3.4', name: 'Migrazione Dati Finale', start: '2024-04-15', end: '2024-04-15', progress: 0, dependencies: '3.3', parent: '3' }, // Single day
+            { id: '3.5', name: 'Preparazione Go-Live', start: '2024-04-15', end: '2024-04-15', progress: 0, dependencies: '3.4', parent: '3' }, // Single day
+            { id: '3.6', name: 'Go-Live', start: '2024-04-16', end: '2024-04-16', progress: 0, dependencies: '3.5', parent: '3' }, // Single day
+            { id: '3.7', name: 'Supporto Post Go-Live', start: '2024-04-16', end: '2024-04-28', progress: 0, dependencies: '3.6', parent: '3' }
+        ];
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const svg = d3.select("#gantt-svg");
+            const container = d3.select("#gantt-container");
+
+            const element = container.node();
+            const availableWidth = element.getBoundingClientRect().width;
+
+            const margin = { top: 50, right: 40, bottom: 60, left: 200 }; // Increased left margin for task names
+            const rowHeight = 30;
+            const barPadding = 5;
+            const barHeight = rowHeight - 2 * barPadding;
+
+            const dateFormat = d3.timeParse("%Y-%m-%d");
+
+            tasks.forEach(task => {
+                task.startDate = dateFormat(task.start);
+                task.endDate = dateFormat(task.end);
+                if (!task.startDate || !task.endDate) {
+                    console.error(`Invalid date for task ${task.name}: ${task.start} or ${task.end}`);
+                }
+            });
+
+            const timeDomainStart = d3.min(tasks, d => d.startDate);
+            const timeDomainEnd = d3.max(tasks, d => d.endDate);
+
+            if (!timeDomainStart || !timeDomainEnd) {
+                console.error("Could not determine time domain for Gantt chart.");
+                svg.append("text")
+                   .attr("x", 10)
+                   .attr("y", 50)
+                   .text("Errore: Dati per il grafico di Gantt non validi o mancanti.");
+                return;
+            }
+            
+            const ganttHeight = tasks.length * rowHeight + margin.top + margin.bottom;
+            // Dynamic width calculation
+            const timeDiff = (timeDomainEnd.getTime() - timeDomainStart.getTime()) / (1000 * 3600 * 24); // difference in days
+            const estimatedTickWidth = 50; // Approximate width desired per week tick or similar density
+            const estimatedSvgWidth = Math.max(availableWidth, (timeDiff / 7) * estimatedTickWidth + margin.left + margin.right);
+
+            svg.attr("width", estimatedSvgWidth)
+               .attr("height", ganttHeight);
+            
+            const chartWidth = estimatedSvgWidth - margin.left - margin.right;
+            const chartHeight = ganttHeight - margin.top - margin.bottom;
+
+            const x = d3.scaleTime()
+                .domain([timeDomainStart, timeDomainEnd])
+                .range([0, chartWidth]);
+
+            const y = d3.scaleBand()
+                .domain(tasks.map(d => d.name))
+                .range([0, chartHeight])
+                .padding(0.1);
+
+            const chart = svg.append("g")
+                .attr("transform", `translate(${margin.left},${margin.top})`);
+
+            // Grid lines
+            const xAxisGrid = d3.axisBottom(x)
+                .ticks(d3.timeWeek.every(1))
+                .tickSize(-chartHeight)
+                .tickFormat("");
+
+            chart.append("g")
+                .attr("class", "grid x-axis-grid")
+                .attr("transform", `translate(0,${chartHeight})`)
+                .call(xAxisGrid);
+            
+            // Month lines for better visual separation
+            const xAxisMonths = d3.axisBottom(x)
+                .ticks(d3.timeMonth.every(1))
+                .tickSize(-chartHeight)
+                .tickFormat("");
+
+            chart.append("g")
+                .attr("class", "grid month-lines")
+                .attr("transform", `translate(0,${chartHeight})`)
+                .call(xAxisMonths)
+                .selectAll("line")
+                .attr("stroke-opacity", 0.5)
+                .attr("stroke-dasharray", "2,2");
+
+            // Task bars
+            const bars = chart.selectAll(".bar-group")
+                .data(tasks)
+                .enter().append("g")
+                .attr("class", "bar-group")
+                .attr("transform", d => `translate(0, ${y(d.name)})`);
+
+            bars.append("rect") // Main bar
+                .attr("class", "bar")
+                .attr("x", d => x(d.startDate))
+                .attr("y", barPadding)
+                .attr("width", d => Math.max(0, x(d.endDate) - x(d.startDate)))
+                .attr("height", barHeight)
+                .attr("rx", 3)
+                .attr("ry", 3);
+                // .style("fill", d => d.parent ? (tasks.find(t => t.id === d.parent) ? d3.color(taskColors(d.parent)).brighter(0.5) : taskColors(d.id)) : taskColors(d.id));
+ 
+
+            bars.append("rect") // Progress bar
+                .attr("class", "bar-progress")
+                .attr("x", d => x(d.startDate))
+                .attr("y", barPadding)
+                .attr("width", d => Math.max(0, (x(d.endDate) - x(d.startDate)) * (d.progress / 100)))
+                .attr("height", barHeight)
+                .attr("rx", 3)
+                .attr("ry", 3);
+
+            bars.append("text")
+                .attr("class", "bar-label")
+                .attr("x", d => x(d.startDate) + 5)
+                .attr("y", rowHeight / 2)
+                .attr("dy", ".35em")
+                .text(d => d.name);
+
+            // X-axis
+            chart.append("g")
+                .attr("class", "x-axis axis-text")
+                .attr("transform", `translate(0,${chartHeight})`)
+                .call(d3.axisBottom(x).ticks(d3.timeMonth.every(1)).tickFormat(d3.timeFormat("%b %Y")))
+                .selectAll("text")
+                .style("text-anchor", "end")
+                .attr("dx", "-0.8em")
+                .attr("dy", "0.15em")
+                .attr("transform", "rotate(-35)");
+
+            // Y-axis (Task names, now hidden as labels are on bars)
+            // chart.append("g")
+            //     .attr("class", "y-axis axis-text")
+            //     .call(d3.axisLeft(y));
+
+            // Title
+            svg.append("text")
+                .attr("x", (estimatedSvgWidth / 2))
+                .attr("y", margin.top / 2)
+                .attr("text-anchor", "middle")
+                .style("font-size", "18px")
+                .style("font-weight", "bold")
+                .text("Diagramma di Gantt Progetto Dreamwear (Esempio)");
+        });
+    </script>
 </body>
-</html> 
+</html>

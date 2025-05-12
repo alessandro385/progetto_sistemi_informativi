@@ -1,0 +1,163 @@
+:root {
+    --bs-primary: #0056b3; /* Colore primario Zucchetti-like */
+    --bs-primary-rgb: 0, 86, 179;
+    --bs-secondary: #6c757d;
+    --bs-light: #f8f9fa;
+    --bs-dark: #343a40;
+}
+
+body {
+    padding-top: 56px; /* Per compensare la navbar fissa */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.navbar {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand {
+    font-weight: bold;
+}
+
+/* Stili per SVG presentazione */
+.mockup-container svg {
+    width: 100%;
+    height: auto;
+}
+
+.mockup-container svg .box {
+    fill: var(--bs-light);
+    stroke: var(--bs-primary);
+    stroke-width: 1.5;
+}
+
+.mockup-container svg .text {
+    font-family: 'Segoe UI', sans-serif;
+    font-size: 11px;
+    fill: var(--bs-dark);
+    text-anchor: middle;
+}
+
+.mockup-container svg .arrow {
+    stroke: var(--bs-primary);
+    stroke-width: 1.5;
+}
+
+.mockup-container svg marker polygon {
+    fill: var(--bs-primary);
+}
+
+.mockup-container svg .svg-title {
+    font-size: 14px;
+    font-weight: bold;
+    fill: var(--bs-primary);
+    text-anchor: middle;
+}
+
+/* Stili comuni per le sezioni */
+main h2 {
+     color: var(--bs-primary);
+     margin-bottom: 1.5rem;
+     padding-bottom: 0.5rem;
+     border-bottom: 2px solid var(--bs-primary);
+     display: inline-block;
+}
+
+/* Stili per Assessment */
+.assessment-section h4 {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #eee;
+}
+
+.asis-column h4 {
+    color: #dc3545; /* Rosso Bootstrap per AS-IS */
+}
+
+.tobe-column h4 {
+    color: #198754; /* Verde Bootstrap per TO-BE */
+}
+
+.table-container {
+    margin-top: 1rem;
+    overflow-x: auto;
+}
+
+.table {
+    font-size: 0.9rem;
+}
+
+.table th {
+    background-color: var(--bs-light);
+}
+
+/* Stili per Gap Analysis (esempio) */
+.gap-card {
+    border-left: 5px solid var(--bs-primary);
+    margin-bottom: 1.5rem;
+}
+
+/* Stili per Database (esempio) */
+#db-schema-img {
+    border: 1px solid #dee2e6;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+/* Stili per Gantt */
+#gantt-container {
+    border: 1px solid #ccc;
+    padding: 15px;
+    border-radius: 5px;
+    background-color: #fff;
+    overflow-x: auto; /* Necessario per Gantt larghi */
+}
+
+#gantt-svg {
+    display: block; /* Assicura che SVG sia blocco */
+     min-width: 800px; /* Imposta una larghezza minima per lo scroll orizzontale se necessario */
+}
+
+#gantt-svg .grid .grid-line {
+    stroke: #e0e0e0;
+    stroke-width: 1;
+}
+#gantt-svg .grid .month-line {
+    stroke: #ccc;
+    stroke-width: 1;
+}
+#gantt-svg .axis-text {
+    font-size: 12px;
+    fill: #555;
+}
+#gantt-svg .bar-group .bar {
+    fill: var(--bs-primary);
+    stroke: #004182;
+    stroke-width: 1;
+    rx: 3;
+    ry: 3;
+    opacity: 0.8;
+    transition: opacity 0.2s ease;
+}
+#gantt-svg .bar-group .bar-progress {
+    fill: rgba(0, 0, 0, 0.3);
+    rx: 3;
+    ry: 3;
+}
+#gantt-svg .bar-group:hover .bar {
+     opacity: 1;
+}
+#gantt-svg .bar-label {
+    font-size: 11px;
+    fill: #fff;
+    text-anchor: middle;
+    dominant-baseline: middle;
+    font-weight: bold;
+}
+
+/* Footer */
+footer {
+    /* Stili footer ereditati da Bootstrap bg-dark */
+} 

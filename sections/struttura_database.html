@@ -4,71 +4,133 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Struttura Database - Dreamwear</title>
-    <link rel="stylesheet" href="../style.css">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <!-- AOS CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../css/custom.css">
 </head>
 <body>
     <header>
-        <h1>Progetto Dreamwear: Implementazione ERP Ad Hoc Revolution</h1>
-        <nav class="main-nav">
-            <ul>
-                <li><a href="../index.html">Presentazione Progetto</a></li>
-                <li><a href="assessment_as_is.html">Assessment AS-IS</a></li>
-                <li><a href="gap_analysis_solution.html">Gap Analysis & Soluzioni</a></li>
-                <li><a href="struttura_database.html" class="active">Struttura Database</a></li>
-                <li><a href="pianificazione_gantt.html">Pianificazione (Gantt)</a></li>
-            </ul>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
+            <div class="container">
+                <a class="navbar-brand" href="../index.html">Progetto Dreamwear</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="../index.html">Presentazione</a></li>
+                        <li class="nav-item"><a class="nav-link" href="assessment_as_is.html">Assessment</a></li>
+                        <li class="nav-item"><a class="nav-link" href="gap_analysis_solution.html">Gap Analysis</a></li>
+                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="struttura_database.html">Database</a></li>
+                        <li class="nav-item"><a class="nav-link" href="pianificazione_gantt.html">Pianificazione</a></li>
+                    </ul>
+                </div>
+            </div>
         </nav>
     </header>
 
-    <main>
-        <section id="database">
-            <h2>Struttura Database</h2>
-             <div class="content-container two-columns">
-                 <div class="left-column">
-                    <h3>Schema ER (Entity-Relationship) Principale</h3>
-                    <p>Lo schema seguente illustra le tabelle fondamentali definite per la gestione dei dati di Dreamwear all'interno (o in relazione) ad Ad Hoc Revolution, focalizzandosi sulle entità chiave del dominio B2B abbigliamento.</p>
-                     <img src="../images/image.png.svg" alt="Schema Database ER Dreamwear" style="width:100%; max-width:600px; border:1px solid #ccc;">
+    <main class="container mt-5 pt-5">
+        <div class="text-center mb-5" data-aos="fade-down">
+            <h1 class="display-5">Struttura del Database Proposta</h1>
+        </div>
 
-                    <h4>Tabelle Dizionario (Look-up Tables)</h4>
-                    <p>Per garantire consistenza e facilitare la selezione, le varianti comuni come colori e taglie sono gestite in tabelle separate (dizionari).</p>
-                    <div style="display: flex; gap: 20px;">
-                        <div>
-                            <h5>Tabella `Colori`</h5>
-                            <ul><li>ID_Colore (PK)</li><li>Descrizione</li></ul>
-                            <i>Valori Esempio:</i>
-                            <ul><li>(1, Rosso)</li><li>(2, Arancione)</li><li>...</li><li>(10, Grigio)</li></ul>
+        <section id="database-structure" class="mb-5">
+            <div class="row">
+                <div class="col-md-12" data-aos="fade-up">
+                    <div class="card shadow-sm">
+                        <div class="card-header bg-primary text-white">
+                            <h3 class="mb-0">Schema ER (Entity-Relationship) Principale</h3>
                         </div>
-                        <div>
-                            <h5>Tabella `Taglie`</h5>
-                            <ul><li>ID_Taglia (PK)</li><li>Codice Taglia</li></ul>
-                             <i>Valori Esempio:</i>
-                            <ul><li>(1, XS)</li><li>(2, S)</li><li>...</li><li>(6, XXL)</li></ul>
+                        <div class="card-body">
+                            <p>Lo schema seguente illustra le tabelle fondamentali definite per la gestione dei dati di Dreamwear all'interno (o in relazione) ad Ad Hoc Revolution, focalizzandosi sulle entità chiave del dominio B2B abbigliamento.</p>
+                            <div class="text-center my-3">
+                                <img src="../images/image.png" alt="Schema Database ER Dreamwear" id="db-schema-img" class="img-fluid" style="max-width: 700px;">
+                                <!-- Nota: il nome dell'immagine e path deve essere corretto -->
+                            </div>
+
+                            <h4 class="mt-4">Tabelle Dizionario (Look-up Tables)</h4>
+                            <p>Per garantire consistenza e facilitare la selezione, le varianti comuni come colori e taglie sono gestite in tabelle separate (dizionari).</p>
+                            <div class="table-responsive">
+                                <table class="table table-bordered table-hover table-sm">
+                                    <thead class="table-light">
+                                        <tr>
+                                            <th>Tabella Dizionario</th>
+                                            <th>Descrizione</th>
+                                            <th>Campi Chiave Esempio</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><code>diz_colori</code></td>
+                                            <td>Elenco dei colori disponibili per gli articoli.</td>
+                                            <td><code>id_colore (PK)</code>, <code>codice_colore</code>, <code>descrizione_colore</code></td>
+                                        </tr>
+                                        <tr>
+                                            <td><code>diz_taglie</code></td>
+                                            <td>Elenco delle taglie disponibili (per tipo prodotto).</td>
+                                            <td><code>id_taglia (PK)</code>, <code>codice_taglia</code>, <code>descrizione_taglia</code>, <code>tipo_prodotto_riferimento</code></td>
+                                        </tr>
+                                        <tr>
+                                            <td><code>diz_stagioni</code></td>
+                                            <td>Stagioni commerciali (es. PE24, AI24).</td>
+                                            <td><code>id_stagione (PK)</code>, <code>codice_stagione</code>, <code>descrizione_stagione</code></td>
+                                        </tr>
+                                        <tr>
+                                            <td><code>diz_gruppi_merceologici</code></td>
+                                            <td>Classificazione articoli (es. Maglieria, Pantaloni).</td>
+                                            <td><code>id_gruppo_merc (PK)</code>, <code>codice_gruppo</code>, <code>descrizione_gruppo</code></td>
+                                        </tr>
+                                         <tr>
+                                            <td><code>diz_marche</code></td>
+                                            <td>Elenco delle marche gestite.</td>
+                                            <td><code>id_marca (PK)</code>, <code>nome_marca</code></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="right-column">
-                    <h3>Spiegazione della Struttura Dati</h3>
-                    <p>La progettazione del database mira a supportare in modo efficiente le operazioni B2B di Dreamwear.</p>
-                    <p><strong>Tabelle Chiave:</strong></p>
-                    <ul>
-                        <li><strong>`Clienti`</strong>: Anagrafica dei clienti B2B (aziende), con dettagli fiscali, commerciali e logistici.</li>
-                        <li><strong>`Articoli`</strong>: Anagrafica prodotti finiti. Include codice, descrizione, prezzo base, e potenzialmente link a campi custom per URL immagine esterna (come definito nella Gap Analysis).</li>
-                        <li><strong>`Colori`</strong>: Tabella dizionario per i colori disponibili.</li>
-                        <li><strong>`Taglie`</strong>: Tabella dizionario per le taglie disponibili.</li>
-                         <li><strong>`Ordini`</strong>: Testa dell'ordine cliente, contiene riferimento al cliente (FK), data, stato, totali.</li>
-                        <li><strong>`RigheOrdine`</strong>: Dettaglio dell'ordine. Collega un ordine (FK) a un articolo specifico (FK), specificando quantità, prezzo applicato, e le varianti scelte tramite riferimenti (FK) alle tabelle `Colori` e `Taglie`.</li>
-                         <li><i>(Potrebbero esistere altre tabelle per Fornitori, Listini, Magazzino, Documenti Fiscali, etc., gestite da Ad Hoc)</i></li>
-                    </ul>
-                     <p><strong>Normalizzazione:</strong></p>
-                    <p>L'uso di tabelle separate per `Colori` e `Taglie` (normalizzazione) evita la duplicazione dei dati nelle righe d'ordine e facilita la gestione centralizzata delle varianti disponibili. Ogni riga d'ordine farà riferimento all'ID univoco del colore e della taglia desiderati.</p>
-                    <p>Questo schema rappresenta una visione logica semplificata. La struttura fisica effettiva all'interno di Ad Hoc Revolution potrebbe essere più complessa e includere molte altre tabelle standard del gestionale.</p>
+            </div>
+
+             <div class="row mt-5">
+                <div class="col-md-12" data-aos="fade-up">
+                    <div class="card shadow-sm">
+                        <div class="card-header bg-primary text-white">
+                            <h3 class="mb-0">Focus: Tabella Articoli e Varianti</h3>
+                        </div>
+                        <div class="card-body">
+                            <p>La tabella <code>articoli</code> sarà centrale. Ogni record rappresenta un articolo "padre". Le varianti (combinazioni taglia/colore) saranno gestite in una tabella correlata <code>articoli_varianti</code> o attraverso la funzionalità nativa di Ad Hoc.</p>
+                            <ul class="list-group">
+                                <li class="list-group-item"><strong><code>articoli</code></strong>: <code>id_articolo (PK)</code>, <code>codice_articolo_padre</code>, <code>descrizione</code>, <code>id_gruppo_merc (FK)</code>, <code>id_marca (FK)</code>, <code>id_stagione (FK)</code>, <code>prezzo_base</code>, ...</li>
+                                <li class="list-group-item"><strong><code>articoli_varianti</code> (se gestione custom)</strong>: <code>id_variante (PK)</code>, <code>id_articolo (FK)</code>, <code>id_colore (FK)</code>, <code>id_taglia (FK)</code>, <code>codice_ean_specifico</code>, <code>disponibilita_specifica</code>, ...</li>
+                            </ul>
+                            <p class="mt-2">Se si utilizza il modulo varianti di Ad Hoc, la struttura potrebbe essere gestita internamente dal software, ma il concetto logico di un articolo padre e delle sue specifiche istanze (varianti) rimane.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
     </main>
 
-    <footer>
-        <p>&copy; 2024 Gruppo Progetto Sistemi Informativi - Implementazione ERP Dreamwear</p>
+    <footer class="bg-dark text-white text-center py-3 mt-5">
+        <div class="container">
+            <p class="mb-0">&copy; 2024 Gruppo Progetto Sistemi Informativi - Implementazione ERP Dreamwear</p>
+        </div>
     </footer>
+
+    <!-- Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <!-- AOS JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            once: true,
+        });
+    </script>
 </body>
 </html> 

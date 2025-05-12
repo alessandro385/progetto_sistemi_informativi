@@ -3,103 +3,105 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gap Analysis e Soluzione - Dreamwear</title>
-    <link rel="stylesheet" href="../style.css">
+    <title>Gap Analysis & Soluzioni - Dreamwear</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <!-- AOS CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../css/custom.css">
 </head>
 <body>
     <header>
-        <h1>Progetto Dreamwear: Implementazione ERP Ad Hoc Revolution</h1>
-        <nav class="main-nav">
-            <ul>
-                <li><a href="../index.html">Presentazione Progetto</a></li>
-                <li><a href="assessment_as_is.html">Assessment AS-IS</a></li>
-                <li><a href="gap_analysis_solution.html" class="active">Gap Analysis & Soluzioni</a></li>
-                <li><a href="struttura_database.html">Struttura Database</a></li>
-                <li><a href="pianificazione_gantt.html">Pianificazione (Gantt)</a></li>
-            </ul>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
+            <div class="container">
+                <a class="navbar-brand" href="../index.html">Progetto Dreamwear</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                         <li class="nav-item"><a class="nav-link" href="../index.html">Presentazione</a></li>
+                         <li class="nav-item"><a class="nav-link" href="assessment_as_is.html">Assessment</a></li>
+                         <li class="nav-item"><a class="nav-link active" aria-current="page" href="gap_analysis_solution.html">Gap Analysis</a></li>
+                         <li class="nav-item"><a class="nav-link" href="struttura_database.html">Database</a></li>
+                         <li class="nav-item"><a class="nav-link" href="pianificazione_gantt.html">Pianificazione</a></li>
+                    </ul>
+                </div>
+            </div>
         </nav>
     </header>
 
-    <main>
-        <section id="gap-analysis">
-            <h2>Gap Analysis e Soluzione TO-BE</h2>
-            <p>Questa sezione illustra le principali differenze (Gap) tra la situazione attuale (AS-IS) e gli obiettivi futuri (TO-BE) per Dreamwear, e come Ad Hoc Revolution verrà configurato o personalizzato per colmare tali lacune.</p>
+    <main class="container mt-5 pt-5">
+        <div class="text-center mb-5" data-aos="fade-down">
+            <h1 class="display-5">Gap Analysis & Soluzioni Proposte</h1>
+        </div>
 
-            <!-- Sottosezione: Ciclo Attivo -->
-            <div class="subsection">
-                <h3>Gap e Soluzione: Ciclo Attivo (Vendite)</h3>
-                <div class="content-container two-columns">
-                    <div class="left-column">
-                        <h4>Implementazione Soluzione TO-BE</h4>
-                        <p><strong>Configurazioni specifiche:</strong></p>
-                        <ul>
-                            <li>Definizione di listini prezzi dedicati al B2B, con scontistiche per volume/cliente.</li>
-                            <li>Flusso d'ordine cliente con stati personalizzati (es. In attesa approvazione, Confermato, In preparazione, Spedito).</li>
-                            <li>Personalizzazione dei layout di stampa per offerte, conferme d'ordine, DDT e fatture.</li>
-                        </ul>
-                        <p><i>Mockup/Esempio Interfaccia (Ad Hoc Revolution):</i></p>
-                        <img src="../images/mockup_ciclo_attivo.svg" alt="Mockup Ciclo Attivo in Ad Hoc" style="width:100%; max-width:450px; border:1px solid #ccc;">
-                    </div>
-                    <div class="right-column">
-                        <h4>Spiegazione del Gap e della Soluzione</h4>
-                        <p><strong>Gap Identificati:</strong></p>
-                        <ul>
-                            <li>Gestione generica dei listini non adatta alle politiche commerciali B2B specifiche di Dreamwear.</li>
-                            <li>Visibilità limitata sullo stato di avanzamento degli ordini cliente.</li>
-                            <li>Documenti standard non completamente allineati con l'immagine aziendale.</li>
-                        </ul>
-                        <p><strong>Soluzione Proposta:</strong></p>
-                        <p>Si sfrutteranno le funzionalità di configurazione dei listini e delle condizioni commerciali di Ad Hoc. Verranno impostati flussi documentali che permettano un tracciamento puntuale. I report e i documenti di vendita verranno personalizzati tramite gli strumenti di Ad Hoc per riflettere il branding Dreamwear e includere tutte le informazioni necessarie per i clienti B2B.</p>
-                    </div>
+        <section id="gap-analysis" class="mb-5">
+
+            <div class="card gap-card shadow-sm mb-4" data-aos="fade-up">
+                <div class="card-header bg-primary text-white">
+                    <h3 class="mb-0">Gap 1: Gestione Varianti Articolo (Taglia/Colore)</h3>
+                </div>
+                <div class="card-body">
+                    <h4 class="card-title">Descrizione del Gap</h4>
+                    <p class="card-text">Il sistema AS-IS non gestisce nativamente le varianti taglia e colore per gli articoli di abbigliamento, richiedendo la creazione di codici articolo separati per ogni combinazione, con conseguente duplicazione e difficoltà di gestione.</p>
+                    <h4 class="card-title mt-3">Soluzione Proposta (TO-BE)</h4>
+                    <p class="card-text">Configurazione del modulo "Varianti" di Ad Hoc Revolution. Definizione delle matrici taglia/colore applicabili ai gruppi merceologici pertinenti. Questo permetterà di avere un unico codice articolo padre con gestione centralizzata delle sue varianti.</p>
+                    <p class="card-text"><strong>Vantaggi:</strong> Riduzione duplicazione anagrafiche, migliore visibilità disponibilità, semplificazione ordini e inventario.</p>
                 </div>
             </div>
 
-            <!-- Sottosezione: Gestione Articoli/Immagini -->
-             <div class="subsection">
-                <h3>Gap e Soluzione: Gestione Catalogo e Immagini Articoli</h3>
-                <div class="content-container two-columns">
-                    <div class="left-column">
-                        <h4>Implementazione Soluzione TO-BE</h4>
-                        <p><strong>Strategia Immagini:</strong> Le immagini degli articoli saranno caricate su un bucket CDN (Content Delivery Network) esterno per ottimizzare la distribuzione e le performance.</p>
-                        <p><strong>Integrazione in Ad Hoc:</strong></p>
-                        <ul>
-                            <li>Nell'anagrafica articolo di Ad Hoc, un campo specifico (es. URL Immagine Esterna) conterrà il link diretto all'immagine principale dell'articolo sul CDN.</li>
-                            <li>Questo URL potrà essere utilizzato per visualizzare l'immagine in anteprime interne al gestionale (se customizzate) o passato a sistemi esterni (es. cataloghi digitali, e-commerce futuri).</li>
-                        </ul>
-                         <p><i>Schema Flusso Dati Immagini:</i></p>
-                         <img src="../images/schema_cdn_articoli.svg" alt="Schema CDN per immagini articolo" style="width:100%; max-width:450px; border:1px solid #ccc;">
-                    </div>
-                    <div class="right-column">
-                        <h4>Spiegazione del Gap e della Soluzione</h4>
-                        <p><strong>Gap Identificati:</strong></p>
-                        <ul>
-                            <li>Ad Hoc Revolution standard potrebbe non offrire una gestione ottimale e scalabile di grandi quantità di immagini prodotto direttamente nel database, specialmente per l'accesso web.</li>
-                            <li>Necessità di performance elevate per la visualizzazione delle immagini in eventuali cataloghi online o strumenti di vendita.</li>
-                        </ul>
-                        <p><strong>Soluzione Proposta:</strong></p>
-                        <p>L'utilizzo di un CDN disaccoppia la memorizzazione delle immagini dal database dell'ERP, migliorando le prestazioni e la flessibilità. Ad Hoc Revolution manterrà il collegamento logico all'immagine tramite URL. Questo approccio garantisce che le immagini siano facilmente aggiornabili e accessibili, e riduce il carico sul server ERP. La scelta del CDN sarà basata su costi, affidabilità e facilità di integrazione per il caricamento/gestione dei file.</p>
-                    </div>
-                </div>
-            </div>
+            <div class="card gap-card shadow-sm mb-4" data-aos="fade-up">
+                <div class="card-header bg-primary text-white">
+                     <h3 class="mb-0">Gap 2: Integrazione E-commerce B2B</h3>
+                 </div>
+                <div class="card-body">
+                    <h4 class="card-title">Descrizione del Gap</h4>
+                    <p class="card-text">L'attuale sito e-commerce B2B è disconnesso dall'ERP. Gli ordini devono essere inseriti manualmente nel gestionale, e le disponibilità/anagrafiche non sono aggiornate in tempo reale sul sito.</p>
+                    <h4 class="card-title mt-3">Soluzione Proposta (TO-BE)</h4>
+                    <p class="card-text">Sviluppo (o utilizzo di modulo esistente) di un connettore bidirezionale tra Ad Hoc Revolution e la piattaforma E-commerce.</p>
+                    <ul>
+                        <li><strong>Flusso Ad Hoc → E-commerce:</strong> Esportazione anagrafiche articoli (con varianti), listini B2B dedicati, disponibilità di magazzino.</li>
+                        <li><strong>Flusso E-commerce → Ad Hoc:</strong> Importazione ordini cliente B2B, creazione/aggiornamento anagrafiche clienti.</li>
+                    </ul>
+                     <p class="card-text"><strong>Vantaggi:</strong> Processo di vendita B2B automatizzato, dati allineati, riduzione errori manuali, migliore esperienza cliente.</p>
+                 </div>
+             </div>
 
-            <!-- QUI VANNO AGGIUNTE ALTRE SOTTOSEZIONI PER: -->
-            <!-- Gap e Soluzione: Ciclo Passivo (Acquisti) -->
-            <!-- Gap e Soluzione: Logistica e Magazzino -->
-            <!-- Gap e Soluzione: Contabilità e Controllo -->
-            <div class="subsection">
-                 <h3>Altre Aree di Intervento (Placeholder)</h3>
-                 <p>Seguiranno dettagli per le seguenti aree:</p>
-                 <ul>
-                    <li><strong>Ciclo Passivo (Acquisti):</strong> Ottimizzazione del flusso d'ordine a fornitore, controllo entrate merci e registrazione fatture.</li>
-                    <li><strong>Logistica e Magazzino:</strong> Gestione avanzata delle ubicazioni, valorizzazione delle scorte, inventario.</li>
-                    <li><strong>Contabilità e Controllo di Gestione:</strong> Personalizzazione del piano dei conti, centri di costo/ricavo, reporting direzionale.</li>
-                 </ul>
-            </div>
-        </section>
-    </main>
+            <div class="card gap-card shadow-sm mb-4" data-aos="fade-up">
+                <div class="card-header bg-primary text-white">
+                     <h3 class="mb-0">Gap 3: Gestione Valuta Estera (Ciclo Passivo)</h3>
+                 </div>
+                <div class="card-body">
+                    <h4 class="card-title">Descrizione del Gap</h4>
+                    <p class="card-text">Il sistema AS-IS non supporta la gestione di documenti di acquisto (ordini, DDT, fatture) in valute diverse dall'Euro, complicando le operazioni con fornitori esteri (es. USA).</p>
+                    <h4 class="card-title mt-3">Soluzione Proposta (TO-BE)</h4>
+                    <p class="card-text">Attivazione e configurazione della gestione multi-valuta in Ad Hoc Revolution. Definizione delle valute estere necessarie (es. USD), configurazione tabelle di cambio (manuali o con importazione tassi), adeguamento causali contabili e documenti per registrare importi in valuta e controvalore in Euro.</p>
+                     <p class="card-text"><strong>Vantaggi:</strong> Gestione corretta acquisti internazionali, adeguamento normativo, tracciabilità tassi di cambio.</p>
+                 </div>
+             </div>
 
-    <footer>
-        <p>&copy; 2024 Gruppo Progetto Sistemi Informativi - Implementazione ERP Dreamwear</p>
+             <!-- Aggiungere qui altre card per eventuali Gap aggiuntivi -->
+
+         </section>
+     </main>
+
+    <footer class="bg-dark text-white text-center py-3 mt-5">
+        <div class="container">
+             <p class="mb-0">&copy; 2024 Gruppo Progetto Sistemi Informativi - Implementazione ERP Dreamwear</p>
+        </div>
     </footer>
+
+    <!-- Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <!-- AOS JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            once: true,
+        });
+    </script>
 </body>
 </html> 
