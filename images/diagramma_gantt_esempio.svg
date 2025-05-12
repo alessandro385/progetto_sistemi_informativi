@@ -1,28 +1,28 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 350">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 950 400">
     <style>
         .bg { fill: #f9f9f9; }
         .grid-line { stroke: #e0e0e0; stroke-width: 1; }
-        .month-label { font-family: sans-serif; font-size: 12px; fill: #666; text-anchor: middle; }
-        .phase-label { font-family: sans-serif; font-size: 11px; fill: #333; }
+        .month-label { font-family: sans-serif; font-size: 13px; fill: #666; text-anchor: middle; }
+        .phase-label { font-family: sans-serif; font-size: 12px; fill: #333; }
         .bar-phase1 { fill: #cfe2ff; stroke: #0d6efd; }
         .bar-phase2 { fill: #d1e7dd; stroke: #198754; }
         .bar-phase3 { fill: #fff3cd; stroke: #ffc107; }
         .bar-phase4 { fill: #f8d7da; stroke: #dc3545; }
         .bar-phase5 { fill: #e2e3e5; stroke: #6c757d; }
         .bar { stroke-width: 1; rx: 3; ry: 3; opacity: 0.8; }
-        .bar-text { font-family: sans-serif; font-size: 9px; fill: #000; text-anchor: middle; dominant-baseline: middle; }
+        .bar-text { font-family: sans-serif; font-size: 10px; fill: #000; text-anchor: middle; dominant-baseline: middle; }
     </style>
 
-    <rect x="0" y="0" width="900" height="350" class="bg" />
+    <rect x="0" y="0" width="950" height="400" class="bg" />
 
     <!-- Griglia Tempo (es. 6 Mesi) -->
-    <line x1="150" y1="30" x2="150" y2="320" class="grid-line" />
-    <line x1="275" y1="30" x2="275" y2="320" class="grid-line" />
-    <line x1="400" y1="30" x2="400" y2="320" class="grid-line" />
-    <line x1="525" y1="30" x2="525" y2="320" class="grid-line" />
-    <line x1="650" y1="30" x2="650" y2="320" class="grid-line" />
-    <line x1="775" y1="30" x2="775" y2="320" class="grid-line" />
-    <line x1="899" y1="30" x2="899" y2="320" class="grid-line" />
+    <line x1="150" y1="30" x2="150" y2="370" class="grid-line" />
+    <line x1="275" y1="30" x2="275" y2="370" class="grid-line" />
+    <line x1="400" y1="30" x2="400" y2="370" class="grid-line" />
+    <line x1="525" y1="30" x2="525" y2="370" class="grid-line" />
+    <line x1="650" y1="30" x2="650" y2="370" class="grid-line" />
+    <line x1="775" y1="30" x2="775" y2="370" class="grid-line" />
+    <line x1="899" y1="30" x2="899" y2="370" class="grid-line" />
 
     <text x="212.5" y="20" class="month-label">Mese 1</text>
     <text x="337.5" y="20" class="month-label">Mese 2</text>
@@ -36,32 +36,32 @@
 
     <!-- Fase 1: Analisi e Progettazione -->
     <text x="10" y="60" class="phase-label">Fase 1: Analisi &</text>
-    <text x="10" y="72" class="phase-label">Progettazione</text>
-    <rect x="150" y="50" width="180" height="25" class="bar bar-phase1" />
-    <text x="240" y="62.5" class="bar-text">Analisi Requisiti, Gap, Design Soluzione</text>
+    <text x="10" y="75" class="phase-label">Progettazione</text>
+    <rect x="150" y="50" width="180" height="30" class="bar bar-phase1" />
+    <text x="240" y="65" class="bar-text">Analisi Requisiti, Gap, Design Soluzione</text>
 
     <!-- Fase 2: Configurazione e Sviluppo -->
-    <text x="10" y="110" class="phase-label">Fase 2: Config. &</text>
-    <text x="10" y="122" class="phase-label">Sviluppo</text>
-    <rect x="275" y="100" width="300" height="25" class="bar bar-phase2" />
-    <text x="425" y="112.5" class="bar-text">Parametrizzazione Ad Hoc, Customizzazioni</text>
+    <text x="10" y="115" class="phase-label">Fase 2: Config. &</text>
+    <text x="10" y="130" class="phase-label">Sviluppo</text>
+    <rect x="275" y="105" width="300" height="30" class="bar bar-phase2" />
+    <text x="425" y="120" class="bar-text">Parametrizzazione Ad Hoc, Customizzazioni</text>
 
     <!-- Fase 3: Test e Migrazione Dati -->
-    <text x="10" y="160" class="phase-label">Fase 3: Test &</text>
-    <text x="10" y="172" class="phase-label">Migrazione Dati</text>
-    <rect x="500" y="150" width="200" height="25" class="bar bar-phase3" />
-    <text x="600" y="162.5" class="bar-text">Test Funzionali, Caricamento Dati</text>
+    <text x="10" y="170" class="phase-label">Fase 3: Test &</text>
+    <text x="10" y="185" class="phase-label">Migrazione Dati</text>
+    <rect x="500" y="160" width="200" height="30" class="bar bar-phase3" />
+    <text x="600" y="175" class="bar-text">Test Funzionali, Caricamento Dati</text>
 
     <!-- Fase 4: Formazione e Go-Live -->
-    <text x="10" y="210" class="phase-label">Fase 4: Formazione</text>
-    <text x="10" y="222" class="phase-label">& Go-Live</text>
-    <rect x="650" y="200" width="150" height="25" class="bar bar-phase4" />
-    <text x="725" y="212.5" class="bar-text">Training Utenti, Avvio</text>
+    <text x="10" y="225" class="phase-label">Fase 4: Formazione</text>
+    <text x="10" y="240" class="phase-label">& Go-Live</text>
+    <rect x="650" y="215" width="150" height="30" class="bar bar-phase4" />
+    <text x="725" y="230" class="bar-text">Training Utenti, Avvio</text>
 
     <!-- Fase 5: Supporto Post Go-Live -->
-    <text x="10" y="260" class="phase-label">Fase 5: Supporto</text>
-    <text x="10" y="272" class="phase-label">Post Go-Live</text>
-    <rect x="775" y="250" width="120" height="25" class="bar bar-phase5" />
-    <text x="835" y="262.5" class="bar-text">Supporto Iniziale</text>
+    <text x="10" y="280" class="phase-label">Fase 5: Supporto</text>
+    <text x="10" y="295" class="phase-label">Post Go-Live</text>
+    <rect x="775" y="270" width="120" height="30" class="bar bar-phase5" />
+    <text x="835" y="285" class="bar-text">Supporto Iniziale</text>
 
 </svg> 

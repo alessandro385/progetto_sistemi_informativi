@@ -115,46 +115,11 @@ main h2 {
     overflow-x: auto; /* Necessario per Gantt larghi */
 }
 
-#gantt-svg {
-    display: block; /* Assicura che SVG sia blocco */
-     min-width: 800px; /* Imposta una larghezza minima per lo scroll orizzontale se necessario */
-}
-
-#gantt-svg .grid .grid-line {
-    stroke: #e0e0e0;
-    stroke-width: 1;
-}
-#gantt-svg .grid .month-line {
-    stroke: #ccc;
-    stroke-width: 1;
-}
-#gantt-svg .axis-text {
-    font-size: 12px;
-    fill: #555;
-}
-#gantt-svg .bar-group .bar {
-    fill: var(--bs-primary);
-    stroke: #004182;
-    stroke-width: 1;
-    rx: 3;
-    ry: 3;
-    opacity: 0.8;
-    transition: opacity 0.2s ease;
-}
-#gantt-svg .bar-group .bar-progress {
-    fill: rgba(0, 0, 0, 0.3);
-    rx: 3;
-    ry: 3;
-}
-#gantt-svg .bar-group:hover .bar {
-     opacity: 1;
-}
-#gantt-svg .bar-label {
-    font-size: 11px;
-    fill: #fff;
-    text-anchor: middle;
-    dominant-baseline: middle;
-    font-weight: bold;
+/* Stile per l'immagine SVG Gantt */
+.gantt-image {
+    max-width: 100%; /* Rende l'immagine responsiva */
+    height: auto;
+    border: 1px solid #eee; /* Aggiunge un bordo leggero */
 }
 
 /* Footer */

@@ -26,7 +26,7 @@
                         <li class="nav-item"><a class="nav-link" href="gap_analysis_solution.html">Gap Analysis</a></li>
                         <li class="nav-item"><a class="nav-link" href="struttura_database.html">Database</a></li>
                         <li class="nav-item"><a class="nav-link active" aria-current="page" href="pianificazione_gantt.html">Pianificazione</a></li>
-                    </ul>
+            </ul>
                 </div>
             </div>
         </nav>
@@ -35,7 +35,7 @@
     <main class="container mt-5 pt-5">
         <div class="text-center mb-5" data-aos="fade-down">
             <h1 class="display-5">Pianificazione del Progetto (Diagramma di Gantt)</h1>
-        </div>
+                 </div>
 
         <section id="gantt-chart-section" data-aos="fade-up">
             <div class="card shadow-sm">
@@ -44,8 +44,9 @@
                 </div>
                 <div class="card-body">
                     <p>Il diagramma di Gantt seguente illustra le principali fasi e attività pianificate per l'implementazione del progetto ERP Dreamwear. Le durate sono indicative e soggette a revisione.</p>
-                    <div id="gantt-container" class="mt-3">
-                        <svg id="gantt-svg"></svg>
+                    <div id="gantt-container" class="mt-3 text-center">
+                        <!-- Sostituisco SVG dinamico con immagine statica -->
+                        <img src="../images/diagramma_gantt_esempio.svg" alt="Diagramma di Gantt Semplificato" class="img-fluid gantt-image">
                     </div>
                     <p class="mt-3 text-muted"><small>Nota: Questo è un Gantt semplificato a scopo illustrativo.</small></p>
                 </div>
@@ -123,7 +124,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                 </div>
             </div>
         </section>
     </main>
@@ -138,15 +139,16 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <!-- AOS JS -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <!-- D3.js and Gantt Chart Script -->
-    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <!-- D3.js and Gantt Chart Script REMOVED -->
+    <!-- <script src="https://d3js.org/d3.v7.min.js"></script> -->
     <script>
         AOS.init({
             duration: 800,
             once: true,
         });
 
-        // Gantt Chart Data (esempio)
+        // Gantt Chart Data (esempio) REMOVED
+        /*
         const tasks = [
             { id: '1', name: 'Fase 1: Analisi e Pianificazione', start: '2024-01-01', end: '2024-01-28', progress: 100, dependencies: '' },
             { id: '1.1', name: 'Kick-off & Team', start: '2024-01-01', end: '2024-01-07', progress: 100, dependencies: '', parent: '1' },
@@ -173,149 +175,153 @@
             { id: '3.6', name: 'Go-Live', start: '2024-04-16', end: '2024-04-16', progress: 0, dependencies: '3.5', parent: '3' }, // Single day
             { id: '3.7', name: 'Supporto Post Go-Live', start: '2024-04-16', end: '2024-04-28', progress: 0, dependencies: '3.6', parent: '3' }
         ];
+        */
 
+        // Gantt Chart Drawing Logic REMOVED
+        /*
         document.addEventListener('DOMContentLoaded', function () {
-            const svg = d3.select("#gantt-svg");
-            const container = d3.select("#gantt-container");
+             const svg = d3.select("#gantt-svg");
+             const container = d3.select("#gantt-container");
 
-            const element = container.node();
-            const availableWidth = element.getBoundingClientRect().width;
+             const element = container.node();
+             const availableWidth = element.getBoundingClientRect().width;
 
-            const margin = { top: 50, right: 40, bottom: 60, left: 200 }; // Increased left margin for task names
-            const rowHeight = 30;
-            const barPadding = 5;
-            const barHeight = rowHeight - 2 * barPadding;
+             const margin = { top: 50, right: 40, bottom: 60, left: 200 }; // Increased left margin for task names
+             const rowHeight = 30;
+             const barPadding = 5;
+             const barHeight = rowHeight - 2 * barPadding;
 
-            const dateFormat = d3.timeParse("%Y-%m-%d");
+             const dateFormat = d3.timeParse("%Y-%m-%d");
 
-            tasks.forEach(task => {
-                task.startDate = dateFormat(task.start);
-                task.endDate = dateFormat(task.end);
-                if (!task.startDate || !task.endDate) {
-                    console.error(`Invalid date for task ${task.name}: ${task.start} or ${task.end}`);
-                }
-            });
+             tasks.forEach(task => {
+                 task.startDate = dateFormat(task.start);
+                 task.endDate = dateFormat(task.end);
+                 if (!task.startDate || !task.endDate) {
+                     console.error(`Invalid date for task ${task.name}: ${task.start} or ${task.end}`);
+                 }
+             });
 
-            const timeDomainStart = d3.min(tasks, d => d.startDate);
-            const timeDomainEnd = d3.max(tasks, d => d.endDate);
+             const timeDomainStart = d3.min(tasks, d => d.startDate);
+             const timeDomainEnd = d3.max(tasks, d => d.endDate);
 
-            if (!timeDomainStart || !timeDomainEnd) {
-                console.error("Could not determine time domain for Gantt chart.");
-                svg.append("text")
-                   .attr("x", 10)
-                   .attr("y", 50)
-                   .text("Errore: Dati per il grafico di Gantt non validi o mancanti.");
-                return;
-            }
+             if (!timeDomainStart || !timeDomainEnd) {
+                 console.error("Could not determine time domain for Gantt chart.");
+                 svg.append("text")
+                    .attr("x", 10)
+                    .attr("y", 50)
+                    .text("Errore: Dati per il grafico di Gantt non validi o mancanti.");
+                 return;
+             }
             
-            const ganttHeight = tasks.length * rowHeight + margin.top + margin.bottom;
-            // Dynamic width calculation
-            const timeDiff = (timeDomainEnd.getTime() - timeDomainStart.getTime()) / (1000 * 3600 * 24); // difference in days
-            const estimatedTickWidth = 50; // Approximate width desired per week tick or similar density
-            const estimatedSvgWidth = Math.max(availableWidth, (timeDiff / 7) * estimatedTickWidth + margin.left + margin.right);
+             const ganttHeight = tasks.length * rowHeight + margin.top + margin.bottom;
+             // Dynamic width calculation
+             const timeDiff = (timeDomainEnd.getTime() - timeDomainStart.getTime()) / (1000 * 3600 * 24); // difference in days
+             const estimatedTickWidth = 50; // Approximate width desired per week tick or similar density
+             const estimatedSvgWidth = Math.max(availableWidth, (timeDiff / 7) * estimatedTickWidth + margin.left + margin.right);
 
-            svg.attr("width", estimatedSvgWidth)
-               .attr("height", ganttHeight);
+             svg.attr("width", estimatedSvgWidth)
+                .attr("height", ganttHeight);
             
-            const chartWidth = estimatedSvgWidth - margin.left - margin.right;
-            const chartHeight = ganttHeight - margin.top - margin.bottom;
+             const chartWidth = estimatedSvgWidth - margin.left - margin.right;
+             const chartHeight = ganttHeight - margin.top - margin.bottom;
 
-            const x = d3.scaleTime()
-                .domain([timeDomainStart, timeDomainEnd])
-                .range([0, chartWidth]);
+             const x = d3.scaleTime()
+                 .domain([timeDomainStart, timeDomainEnd])
+                 .range([0, chartWidth]);
 
-            const y = d3.scaleBand()
-                .domain(tasks.map(d => d.name))
-                .range([0, chartHeight])
-                .padding(0.1);
+             const y = d3.scaleBand()
+                 .domain(tasks.map(d => d.name))
+                 .range([0, chartHeight])
+                 .padding(0.1);
 
-            const chart = svg.append("g")
-                .attr("transform", `translate(${margin.left},${margin.top})`);
+             const chart = svg.append("g")
+                 .attr("transform", `translate(${margin.left},${margin.top})`);
 
-            // Grid lines
-            const xAxisGrid = d3.axisBottom(x)
-                .ticks(d3.timeWeek.every(1))
-                .tickSize(-chartHeight)
-                .tickFormat("");
+             // Grid lines
+             const xAxisGrid = d3.axisBottom(x)
+                 .ticks(d3.timeWeek.every(1))
+                 .tickSize(-chartHeight)
+                 .tickFormat("");
 
-            chart.append("g")
-                .attr("class", "grid x-axis-grid")
-                .attr("transform", `translate(0,${chartHeight})`)
-                .call(xAxisGrid);
+             chart.append("g")
+                 .attr("class", "grid x-axis-grid")
+                 .attr("transform", `translate(0,${chartHeight})`)
+                 .call(xAxisGrid);
             
-            // Month lines for better visual separation
-            const xAxisMonths = d3.axisBottom(x)
-                .ticks(d3.timeMonth.every(1))
-                .tickSize(-chartHeight)
-                .tickFormat("");
+             // Month lines for better visual separation
+             const xAxisMonths = d3.axisBottom(x)
+                 .ticks(d3.timeMonth.every(1))
+                 .tickSize(-chartHeight)
+                 .tickFormat("");
 
-            chart.append("g")
-                .attr("class", "grid month-lines")
-                .attr("transform", `translate(0,${chartHeight})`)
-                .call(xAxisMonths)
-                .selectAll("line")
-                .attr("stroke-opacity", 0.5)
-                .attr("stroke-dasharray", "2,2");
+             chart.append("g")
+                 .attr("class", "grid month-lines")
+                 .attr("transform", `translate(0,${chartHeight})`)
+                 .call(xAxisMonths)
+                 .selectAll("line")
+                 .attr("stroke-opacity", 0.5)
+                 .attr("stroke-dasharray", "2,2");
 
-            // Task bars
-            const bars = chart.selectAll(".bar-group")
-                .data(tasks)
-                .enter().append("g")
-                .attr("class", "bar-group")
-                .attr("transform", d => `translate(0, ${y(d.name)})`);
+             // Task bars
+             const bars = chart.selectAll(".bar-group")
+                 .data(tasks)
+                 .enter().append("g")
+                 .attr("class", "bar-group")
+                 .attr("transform", d => `translate(0, ${y(d.name)})`);
 
-            bars.append("rect") // Main bar
-                .attr("class", "bar")
-                .attr("x", d => x(d.startDate))
-                .attr("y", barPadding)
-                .attr("width", d => Math.max(0, x(d.endDate) - x(d.startDate)))
-                .attr("height", barHeight)
-                .attr("rx", 3)
-                .attr("ry", 3);
-                // .style("fill", d => d.parent ? (tasks.find(t => t.id === d.parent) ? d3.color(taskColors(d.parent)).brighter(0.5) : taskColors(d.id)) : taskColors(d.id));
+             bars.append("rect") // Main bar
+                 .attr("class", "bar")
+                 .attr("x", d => x(d.startDate))
+                 .attr("y", barPadding)
+                 .attr("width", d => Math.max(0, x(d.endDate) - x(d.startDate)))
+                 .attr("height", barHeight)
+                 .attr("rx", 3)
+                 .attr("ry", 3);
+                 // .style("fill", d => d.parent ? (tasks.find(t => t.id === d.parent) ? d3.color(taskColors(d.parent)).brighter(0.5) : taskColors(d.id)) : taskColors(d.id));
  
 
-            bars.append("rect") // Progress bar
-                .attr("class", "bar-progress")
-                .attr("x", d => x(d.startDate))
-                .attr("y", barPadding)
-                .attr("width", d => Math.max(0, (x(d.endDate) - x(d.startDate)) * (d.progress / 100)))
-                .attr("height", barHeight)
-                .attr("rx", 3)
-                .attr("ry", 3);
+             bars.append("rect") // Progress bar
+                 .attr("class", "bar-progress")
+                 .attr("x", d => x(d.startDate))
+                 .attr("y", barPadding)
+                 .attr("width", d => Math.max(0, (x(d.endDate) - x(d.startDate)) * (d.progress / 100)))
+                 .attr("height", barHeight)
+                 .attr("rx", 3)
+                 .attr("ry", 3);
 
-            bars.append("text")
-                .attr("class", "bar-label")
-                .attr("x", d => x(d.startDate) + 5)
-                .attr("y", rowHeight / 2)
-                .attr("dy", ".35em")
-                .text(d => d.name);
+             bars.append("text")
+                 .attr("class", "bar-label")
+                 .attr("x", d => x(d.startDate) + 5)
+                 .attr("y", rowHeight / 2)
+                 .attr("dy", ".35em")
+                 .text(d => d.name);
 
-            // X-axis
-            chart.append("g")
-                .attr("class", "x-axis axis-text")
-                .attr("transform", `translate(0,${chartHeight})`)
-                .call(d3.axisBottom(x).ticks(d3.timeMonth.every(1)).tickFormat(d3.timeFormat("%b %Y")))
-                .selectAll("text")
-                .style("text-anchor", "end")
-                .attr("dx", "-0.8em")
-                .attr("dy", "0.15em")
-                .attr("transform", "rotate(-35)");
+             // X-axis
+             chart.append("g")
+                 .attr("class", "x-axis axis-text")
+                 .attr("transform", `translate(0,${chartHeight})`)
+                 .call(d3.axisBottom(x).ticks(d3.timeMonth.every(1)).tickFormat(d3.timeFormat("%b %Y")))
+                 .selectAll("text")
+                 .style("text-anchor", "end")
+                 .attr("dx", "-0.8em")
+                 .attr("dy", "0.15em")
+                 .attr("transform", "rotate(-35)");
 
-            // Y-axis (Task names, now hidden as labels are on bars)
-            // chart.append("g")
-            //     .attr("class", "y-axis axis-text")
-            //     .call(d3.axisLeft(y));
+             // Y-axis (Task names, now hidden as labels are on bars)
+             // chart.append("g")
+             //     .attr("class", "y-axis axis-text")
+             //     .call(d3.axisLeft(y));
 
-            // Title
-            svg.append("text")
-                .attr("x", (estimatedSvgWidth / 2))
-                .attr("y", margin.top / 2)
-                .attr("text-anchor", "middle")
-                .style("font-size", "18px")
-                .style("font-weight", "bold")
-                .text("Diagramma di Gantt Progetto Dreamwear (Esempio)");
+             // Title
+             svg.append("text")
+                 .attr("x", (estimatedSvgWidth / 2))
+                 .attr("y", margin.top / 2)
+                 .attr("text-anchor", "middle")
+                 .style("font-size", "18px")
+                 .style("font-weight", "bold")
+                 .text("Diagramma di Gantt Progetto Dreamwear (Esempio)");
         });
+        */
     </script>
 </body>
-</html>
+</html> 
