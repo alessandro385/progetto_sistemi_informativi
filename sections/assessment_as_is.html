@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assessment AS-IS & Proposta TO-BE - Dreamwear</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../css/assessment.css">
+</head>
+<body>
+    <header>
+        <h1>Progetto Dreamwear: Implementazione ERP Ad Hoc Revolution</h1>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="presentazione_progetto.html">Presentazione Progetto</a></li>
+                <li><a href="assessment_as_is.html" class="active">Assessment AS-IS</a></li>
+                <li><a href="gap_analysis_solution.html">Gap Analysis & Soluzioni</a></li>
+                <li><a href="struttura_database.html">Struttura Database</a></li>
+                <li><a href="pianificazione_gantt.html">Pianificazione (Gantt)</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="assessment-analysis">
+            <h2>Assessment AS-IS & Proposta TO-BE</h2>
+
+            <!-- Ciclo Attivo -->
+            <div class="topic-section">
+                <h3>Ciclo Attivo</h3>
+                <div class="content-container two-columns assessment-section">
+                    <div class="left-column asis-column">
+                        <h4>AS-IS</h4>
+                        <p>L'attuale ciclo attivo prevede il flusso: Ordine → DDT (Documento di Trasporto) → Fattura oppure Ordine → Fattura immediata.</p>
+                        <p>La causale ordini di vendita è: <strong>Ordine Cliente (ORDCL)</strong>.</p>
+                        <p>Le causali documenti di vendita sono: DDT vendita, Fattura cliente differita, Fattura fornitore, Fattura immediata.</p>
+                        <p>In questo momento il sistema è scollegato dal sito e-commerce.</p>
+                    </div>
+                    <div class="right-column tobe-column">
+                        <h4>TO-BE</h4>
+                        <p>Il ciclo attivo dovrà prevedere un'integrazione con il B2B per poter collegare il gestionale con il sito e-commerce quindi ci sarà un nuovo ciclo ordine-ddt-fattura per l'interfaccia con B2B.</p>
+                        <p>Inoltre la nuova implementazione sul gestionale che è stata pensata è quella di integrare un sistema interno per la gestione di <strong>taglie e colori</strong> senza dover duplicare gli ordini (quindi aggiungere 2 nuovi campi che andranno a differenziare i prodotti).</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Ciclo Passivo -->
+            <div class="topic-section">
+                <h3>Ciclo Passivo</h3>
+                <div class="content-container two-columns assessment-section">
+                    <div class="left-column asis-column">
+                        <h4>AS-IS</h4>
+                        <p>Il ciclo passivo attualmente prevede il flusso: Ordine → DDT (Documento di Trasporto) → Fattura.</p>
+                        <p>La causale ordini di vendita è: <strong>Ordine Fornitore (ORDFO)</strong>.</p>
+                        <p>Le causali documenti di vendita sono: DDT Acquisto, Ricevimento fatt. fornitore (dif).</p>
+                    </div>
+                    <div class="right-column tobe-column">
+                        <h4>TO-BE</h4>
+                        <p>Il ciclo passivo dovrà prevedere un nuovo ciclo ordine-ddt-fattura per particolari casistiche.</p>
+                        <p>Aggiungere causali per gestire certi tipi di fornitori o fornitori esteri con l'introduzione della <strong>gestione dinamica della valuta</strong>.</p>
+                        <p>Sarà possibile gestire ordini, documenti di trasporto e fatture sia in Euro che in Dollari, con conversione automatica dei valori secondo il tasso di cambio vigente, assicurando la corretta contabilizzazione e il rispetto delle normative fiscali internazionali.</p>
+                    </div>
+                </div>
+            </div>
+
+             <!-- Logistica e Magazzino -->
+             <div class="topic-section">
+                <h3>Logistica e Magazzino</h3>
+                <div class="content-container two-columns assessment-section">
+                    <div class="left-column asis-column">
+                        <h4>AS-IS</h4>
+                        <p>Gli Articoli e i Servizi attualmente prevedono un raggruppamento secondo queste categorie contabili:</p>
+                        <ul>
+                            <li>Accessori</li>
+                            <li>Calzature</li>
+                            <li>Capispalla</li>
+                            <li>Cappelli</li>
+                            <li>Maglieria</li>
+                            <li>Pantaloni</li>
+                            <li>Servizi</li>
+                            <li>Tessuti</li>
+                        </ul>
+                    </div>
+                    <div class="right-column tobe-column">
+                        <h4>TO-BE</h4>
+                        <p>Gli Articoli e i Servizi dovranno essere organizzati e raggruppati secondo dei <strong>gruppi merceologici</strong> e delle <strong>marche</strong>.</p>
+                        <p>In particolare classificabili tramite nuovi attributi come <strong>Taglia, Tipologia e Colore</strong>, per una gestione più dettagliata e funzionale del magazzino.</p>
+                        <p>Per ogni articolo dopo aver inserito la categoria contabile, nella ramo "classificazione" degli articoli sono presenti i nuovi raggruppamenti.</p>
+                        <p>Inoltre, sarà introdotto un nuovo gruppo merceologico specifico per la gestione delle <strong>Marche</strong> dei vestiti, al fine di migliorare l'organizzazione, la ricerca e la reportistica degli articoli a catalogo.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contabilità -->
+            <div class="topic-section">
+                <h3>Contabilità</h3>
+                <div class="content-container two-columns assessment-section">
+                    <div class="left-column asis-column">
+                        <h4>AS-IS</h4>
+                        <p>La contabilità è attualmente così: il piano dei conti è filtrato in codice maestro, descrizione maestro, livello e tipo mastro.</p>
+                        <h5>Piano dei Conti Attuale (Estratto)</h5>
+                        <!-- Tabella basata sull'immagine del piano dei conti -->
+                        <div class="table-container">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Mastro</th>
+                                        <th>Codice</th>
+                                        <th>Descrizione</th>
+                                        <th>Livello</th>
+                                        <th>Tipo mastro</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr><td>01</td><td></td><td>Attività</td><td>4</td><td>Generico</td></tr>
+                                    <tr><td>02</td><td></td><td>Passività</td><td>4</td><td>Generico</td></tr>
+                                    <tr><td>03</td><td></td><td>Costi</td><td>4</td><td>Generico</td></tr>
+                                    <tr><td>04</td><td></td><td>Ricavi</td><td>4</td><td>Generico</td></tr>
+                                    <tr><td>DISPO</td><td></td><td>Disponibilità denaro</td><td>3</td><td>Generico</td></tr>
+                                    <tr><td>ONE-FIN</td><td></td><td>Oneri finanziari</td><td>3</td><td>Generico</td></tr>
+                                    <tr><td>PROV FINAN</td><td></td><td>Proventi finanziari</td><td>3</td><td>Generico</td></tr>
+                                    <tr><td>V & S</td><td></td><td>Vendita e servizi</td><td>3</td><td>Generico</td></tr>
+                                    <tr><td>0101</td><td></td><td>Immobilizzazioni</td><td>2</td><td>Generico</td></tr>
+                                    <tr><td>0102</td><td></td><td>Crediti</td><td>2</td><td>Generico</td></tr>
+                                    <tr><td>0201</td><td></td><td>Fondi Ammortamento</td><td>2</td><td>Generico</td></tr>
+                                    <tr><td>0202</td><td></td><td>Debiti</td><td>2</td><td>Generico</td></tr>
+                                    <tr><td>0203</td><td></td><td>Erario</td><td>2</td><td>Generico</td></tr>
+                                    <tr><td>0301</td><td></td><td>Acquisti</td><td>2</td><td>Generico</td></tr>
+                                    <tr><td>0302</td><td></td><td>Ammortamenti</td><td>2</td><td>Generico</td></tr>
+                                    <tr><td>401</td><td></td><td>Vendite</td><td>2</td><td>Generico</td></tr>
+                                    <tr><td>0101001</td><td></td><td>Immobilizzazione materiali</td><td>1</td><td>Generico</td></tr>
+                                    <tr><td>0102001</td><td></td><td>Disponibilità</td><td>1</td><td>Generico</td></tr>
+                                    <tr><td>0102002</td><td></td><td>Effetti Attivi</td><td>1</td><td>Generico</td></tr>
+                                    <tr><td>0102003</td><td></td><td>Crediti violenti</td><td>1</td><td>Clienti</td></tr>
+                                    <tr><td>0103001</td><td></td><td>Crediti violenti</td><td>1</td><td>Generico</td></tr>
+                                    <tr><td>0201001</td><td></td><td>F.do amm. Immob Materiali</td><td>1</td><td>Generico</td></tr>
+                                    <tr><td>0203001</td><td></td><td>Erario c/Iva</td><td>1</td><td>Generico</td></tr>
+                                     <tr><td>0301001</td><td></td><td>Merci c/acquisti</td><td>1</td><td>Generico</td></tr>
+                                     <tr><td>0301002</td><td></td><td>Oneri diversi</td><td>1</td><td>Generico</td></tr>
+                                     <tr><td>0302001</td><td></td><td>Ammortamenti</td><td>1</td><td>Generico</td></tr>
+                                     <tr><td>0303003</td><td></td><td>Acquisto pantaloni</td><td>1</td><td>Generico</td></tr>
+                                     <tr><td>0403001</td><td></td><td>Vendita cappelli</td><td>1</td><td>Generico</td></tr>
+                                     <tr><td>0403002</td><td></td><td>Vendita maglieria</td><td>1</td><td>Generico</td></tr>
+                                     <tr><td>0403003</td><td></td><td>Vendite pantaloni</td><td>1</td><td>Generico</td></tr>
+                                     <tr><td>0403004</td><td></td><td>Vendite calzature</td><td>1</td><td>Generico</td></tr>
+                                     <tr><td>202001</td><td></td><td>Debiti v/Fornitori</td><td>1</td><td>Fornitori</td></tr>
+                                     <tr><td>303001</td><td></td><td>Acquisto cappelli</td><td>1</td><td>Generico</td></tr>
+                                     <tr><td>303003</td><td></td><td>Acquisto maglieria</td><td>1</td><td>Generico</td></tr>
+                                     <tr><td>303004</td><td></td><td>Acquisto calzature</td><td>1</td><td>Generico</td></tr>
+                                     <tr><td>401001</td><td></td><td>Merci c/vendite</td><td>1</td><td>Generico</td></tr>
+                                     <tr><td>401002</td><td></td><td>Vendita Servizi</td><td>1</td><td>Generico</td></tr>
+                                     <tr><td>401003</td><td></td><td>Altri ricavi</td><td>1</td><td>Generico</td></tr>
+                                     <tr><td>45890</td><td></td><td>acquisto tessuti</td><td>1</td><td>Generico</td></tr>
+                                     <tr><td>CASSA</td><td></td><td>Cassa centrale</td><td>1</td><td>Generico</td></tr>
+                                     <tr><td>ONR ALT</td><td></td><td>Oneri altri</td><td>1</td><td>Generico</td></tr>
+                                     <tr><td>PRV FIN</td><td></td><td>Proventi finanziari</td><td>1</td><td>Generico</td></tr>
+                                     <tr><td>VENDITE IT</td><td></td><td>Vendite Italia</td><td>1</td><td>Generico</td></tr>
+                                    <!-- ... Aggiungere altre righe se necessario ... -->
+                                </tbody>
+                            </table>
+                        </div>
+                        <h5>Causali Contabili Attuali</h5>
+                         <ul>
+                            <li>Acconto da cliente</li>
+                            <li>Acquisto fornitore</li>
+                            <li>Emissione fattura</li>
+                            <li>Incasso fattura</li>
+                            <li>Effetti salvo buon fine</li>
+                            <li>giroconto da sbf a c/c</li>
+                            <li>Rid.diff.cambi su accorp.conti</li>
+                            <li>Incasso generico</li>
+                            <li>Acconto a Fornitore</li>
+                            <li>Bonifico fornitore</li>
+                            <li>Pagamento fattura fornitore</li>
+                            <li>Ricevimento fattura</li>
+                            <li>Giroconto</li>
+                        </ul>
+                    </div>
+                    <div class="right-column tobe-column">
+                        <h4>TO-BE</h4>
+                        <p>Dovrà essere prevista nuova configurazione causali fatture acquisto vendita.</p>
+                        <p>Dovrà essere prevista interfaccia con:</p>
+                        <ul>
+                            <li><strong>Commercialista (trasferimento primanota):</strong>
+                                <ul>
+                                    <li>Nuova configurazione delle causali contabili per la gestione: Fatture di acquisto, Fatture di vendita, Note di credito e di debito.</li>
+                                    <li>Integrazione con il commercialista attraverso trasferimento automatico della prima nota contabile, tramite file strutturati (es. XML, Excel o API dedicate).<br>
+                                        <em>Flusso: Gestionale → Esporta Prima Nota → File Standard → Commercialista</em></li>
+                                </ul>
+                            </li>
+                             <li><strong>Programma tesoreria e finanza:</strong>
+                                <ul>
+                                     <li>Trasferimento partite scadenze aperte.</li>
+                                     <li>Rientro partite chiuse.</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+             </div>
+
+             <!-- Interfaccia E-commerce -->
+             <div class="topic-section">
+                 <h3>Interfaccia E-commerce</h3>
+                 <div class="content-container two-columns assessment-section">
+                    <div class="left-column asis-column">
+                        <h4>AS-IS</h4>
+                        <p>Attualmente il sito web è sviluppato internamente dal reparto IT ed è scollegato d'ERP.</p>
+                    </div>
+                    <div class="right-column tobe-column">
+                        <h4>TO-BE</h4>
+                        <p>L'obiettivo è integrare l'attuale sito con il nuovo ERP Ad Hoc.</p>
+                        <p>Ad Hoc esporterà i dati anagrafici verso l'e-commerce (Clienti, Articoli, Servizi) e l'e-commerce esporterà i dati degli ordini verso Ad Hoc per la fatturazione.</p>
+                        <p>Tramite l'e-commerce vengono raccolti gli ordini relativi agli articoli, vengono gestite le vendite ed il magazzino.</p>
+                        <h5>Schema Interfaccia</h5>
+                        <!-- Immagine Schema E-commerce -->
+                        <img src="../assets-assesment/schema_ecommerce_integration.png" alt="Schema Integrazione ERP E-Commerce" style="max-width: 400px; display: block; margin-top: 10px;">
+                        <!-- NOTA: Assicurati che il nome file 'schema_ecommerce_integration.png' sia corretto e l'immagine sia in assets-assesment -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Utenti e Gruppi -->
+            <div class="topic-section">
+                 <h3>Utenti e Gruppi</h3>
+                 <div class="content-container two-columns assessment-section">
+                    <div class="left-column asis-column">
+                        <h4>AS-IS</h4>
+                        <p>Attualmente gli Utenti non sono organizzati in gruppi e ciascuno accede al relativo applicativo tramite proprio utente e password (senza limiti di scadenza).</p>
+                    </div>
+                    <div class="right-column tobe-column">
+                        <h4>TO-BE</h4>
+                        <p>Gli Utenti saranno organizzati in Gruppi omogenei per permessi di visualizzazione, inserimento, modifica, cancellazione delle informazioni in base alle proprie competenze e responsabilità.</p>
+                        <h5>Matrice Permessi Proposta</h5>
+                         <!-- Tabella basata sull'immagine dei permessi -->
+                         <div class="table-container">
+                             <table>
+                                <thead>
+                                    <tr>
+                                        <th rowspan="2">Gruppo</th>
+                                        <th rowspan="2">Utente</th>
+                                        <th rowspan="2">Ruolo</th>
+                                        <th rowspan="2">Applicativo</th>
+                                        <th rowspan="2">Modulo</th>
+                                        <th colspan="4">Permessi</th>
+                                     </tr>
+                                     <tr>
+                                        <th>Accede</th>
+                                        <th>Inserisce</th>
+                                        <th>Modifica</th>
+                                        <th>Cancella</th>
+                                     </tr>
+                                </thead>
+                                <tbody>
+                                     <tr>
+                                         <td>Admin</td>
+                                         <td>Mario Rossi</td>
+                                         <td>Contabile</td>
+                                         <td>Amministrazione</td>
+                                         <td>Contabilità generale</td>
+                                         <td>SI</td>
+                                         <td>SI</td>
+                                         <td>SI</td>
+                                         <td>SI</td>
+                                     </tr>
+                                     <tr>
+                                         <td>Commerciale</td>
+                                         <td>Laura Bianchi</td>
+                                         <td>Sales Manager</td>
+                                         <td>Commerciale</td>
+                                         <td>Fatturazione e Clienti</td>
+                                         <td>SI</td>
+                                         <td>SI</td>
+                                         <td>SI</td>
+                                         <td>NO</td>
+                                     </tr>
+                                     <tr>
+                                         <td>Magazzino</td>
+                                         <td>Luca Verdi</td>
+                                         <td>Responsabile magazzino / Capo Reparto</td>
+                                         <td>Logistica</td>
+                                         <td>Gestione Ordini di magazzino</td>
+                                         <td>SI</td>
+                                         <td>SI</td>
+                                         <td>SI</td>
+                                         <td>SI</td>
+                                     </tr>
+                                     <tr>
+                                         <td>Produzione</td>
+                                         <td>Anna Neri</td>
+                                         <td>Produzione</td>
+                                         <td>Produzione</td>
+                                         <td>Produzione</td>
+                                         <td>SI</td>
+                                         <td>SI</td>
+                                         <td>SI</td>
+                                         <td>NO</td>
+                                     </tr>
+                                     <tr>
+                                         <td>IT</td>
+                                         <td>Fabio Gialli</td>
+                                         <td>Sistemista</td>
+                                         <td>IT</td>
+                                         <td>Configurazione Sistema</td>
+                                         <td>SI</td>
+                                         <td>SI</td>
+                                         <td>SI</td>
+                                         <td>SI</td>
+                                     </tr>
+                                     <!-- ... Aggiungere altri utenti/gruppi se necessario ... -->
+                                 </tbody>
+                             </table>
+                         </div>
+                     </div>
+                </div>
+            </div>
+
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Gruppo Progetto Sistemi Informativi - Implementazione ERP Dreamwear</p>
+    </footer>
+</body>
+</html> 

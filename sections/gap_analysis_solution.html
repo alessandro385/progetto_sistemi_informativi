@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gap Analysis e Soluzione - Dreamwear</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <header>
+        <h1>Progetto Dreamwear: Implementazione ERP Ad Hoc Revolution</h1>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="presentazione_progetto.html">Presentazione Progetto</a></li>
+                <li><a href="assessment_as_is.html">Assessment AS-IS</a></li>
+                <li><a href="gap_analysis_solution.html" class="active">Gap Analysis & Soluzioni</a></li>
+                <li><a href="struttura_database.html">Struttura Database</a></li>
+                <li><a href="pianificazione_gantt.html">Pianificazione (Gantt)</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="gap-analysis">
+            <h2>Gap Analysis e Soluzione TO-BE</h2>
+            <p>Questa sezione illustra le principali differenze (Gap) tra la situazione attuale (AS-IS) e gli obiettivi futuri (TO-BE) per Dreamwear, e come Ad Hoc Revolution verrà configurato o personalizzato per colmare tali lacune.</p>
+
+            <!-- Sottosezione: Ciclo Attivo -->
+            <div class="subsection">
+                <h3>Gap e Soluzione: Ciclo Attivo (Vendite)</h3>
+                <div class="content-container two-columns">
+                    <div class="left-column">
+                        <h4>Implementazione Soluzione TO-BE</h4>
+                        <p><strong>Configurazioni specifiche:</strong></p>
+                        <ul>
+                            <li>Definizione di listini prezzi dedicati al B2B, con scontistiche per volume/cliente.</li>
+                            <li>Flusso d'ordine cliente con stati personalizzati (es. In attesa approvazione, Confermato, In preparazione, Spedito).</li>
+                            <li>Personalizzazione dei layout di stampa per offerte, conferme d'ordine, DDT e fatture.</li>
+                        </ul>
+                        <p><i>Mockup/Esempio Interfaccia (Ad Hoc Revolution):</i></p>
+                        <img src="../images/mockup_ciclo_attivo.svg" alt="Mockup Ciclo Attivo in Ad Hoc" style="width:100%; max-width:450px; border:1px solid #ccc;">
+                    </div>
+                    <div class="right-column">
+                        <h4>Spiegazione del Gap e della Soluzione</h4>
+                        <p><strong>Gap Identificati:</strong></p>
+                        <ul>
+                            <li>Gestione generica dei listini non adatta alle politiche commerciali B2B specifiche di Dreamwear.</li>
+                            <li>Visibilità limitata sullo stato di avanzamento degli ordini cliente.</li>
+                            <li>Documenti standard non completamente allineati con l'immagine aziendale.</li>
+                        </ul>
+                        <p><strong>Soluzione Proposta:</strong></p>
+                        <p>Si sfrutteranno le funzionalità di configurazione dei listini e delle condizioni commerciali di Ad Hoc. Verranno impostati flussi documentali che permettano un tracciamento puntuale. I report e i documenti di vendita verranno personalizzati tramite gli strumenti di Ad Hoc per riflettere il branding Dreamwear e includere tutte le informazioni necessarie per i clienti B2B.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sottosezione: Gestione Articoli/Immagini -->
+             <div class="subsection">
+                <h3>Gap e Soluzione: Gestione Catalogo e Immagini Articoli</h3>
+                <div class="content-container two-columns">
+                    <div class="left-column">
+                        <h4>Implementazione Soluzione TO-BE</h4>
+                        <p><strong>Strategia Immagini:</strong> Le immagini degli articoli saranno caricate su un bucket CDN (Content Delivery Network) esterno per ottimizzare la distribuzione e le performance.</p>
+                        <p><strong>Integrazione in Ad Hoc:</strong></p>
+                        <ul>
+                            <li>Nell'anagrafica articolo di Ad Hoc, un campo specifico (es. URL Immagine Esterna) conterrà il link diretto all'immagine principale dell'articolo sul CDN.</li>
+                            <li>Questo URL potrà essere utilizzato per visualizzare l'immagine in anteprime interne al gestionale (se customizzate) o passato a sistemi esterni (es. cataloghi digitali, e-commerce futuri).</li>
+                        </ul>
+                         <p><i>Schema Flusso Dati Immagini:</i></p>
+                         <img src="../images/schema_cdn_articoli.svg" alt="Schema CDN per immagini articolo" style="width:100%; max-width:450px; border:1px solid #ccc;">
+                    </div>
+                    <div class="right-column">
+                        <h4>Spiegazione del Gap e della Soluzione</h4>
+                        <p><strong>Gap Identificati:</strong></p>
+                        <ul>
+                            <li>Ad Hoc Revolution standard potrebbe non offrire una gestione ottimale e scalabile di grandi quantità di immagini prodotto direttamente nel database, specialmente per l'accesso web.</li>
+                            <li>Necessità di performance elevate per la visualizzazione delle immagini in eventuali cataloghi online o strumenti di vendita.</li>
+                        </ul>
+                        <p><strong>Soluzione Proposta:</strong></p>
+                        <p>L'utilizzo di un CDN disaccoppia la memorizzazione delle immagini dal database dell'ERP, migliorando le prestazioni e la flessibilità. Ad Hoc Revolution manterrà il collegamento logico all'immagine tramite URL. Questo approccio garantisce che le immagini siano facilmente aggiornabili e accessibili, e riduce il carico sul server ERP. La scelta del CDN sarà basata su costi, affidabilità e facilità di integrazione per il caricamento/gestione dei file.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- QUI VANNO AGGIUNTE ALTRE SOTTOSEZIONI PER: -->
+            <!-- Gap e Soluzione: Ciclo Passivo (Acquisti) -->
+            <!-- Gap e Soluzione: Logistica e Magazzino -->
+            <!-- Gap e Soluzione: Contabilità e Controllo -->
+            <div class="subsection">
+                 <h3>Altre Aree di Intervento (Placeholder)</h3>
+                 <p>Seguiranno dettagli per le seguenti aree:</p>
+                 <ul>
+                    <li><strong>Ciclo Passivo (Acquisti):</strong> Ottimizzazione del flusso d'ordine a fornitore, controllo entrate merci e registrazione fatture.</li>
+                    <li><strong>Logistica e Magazzino:</strong> Gestione avanzata delle ubicazioni, valorizzazione delle scorte, inventario.</li>
+                    <li><strong>Contabilità e Controllo di Gestione:</strong> Personalizzazione del piano dei conti, centri di costo/ricavo, reporting direzionale.</li>
+                 </ul>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Gruppo Progetto Sistemi Informativi - Implementazione ERP Dreamwear</p>
+    </footer>
+</body>
+</html> 

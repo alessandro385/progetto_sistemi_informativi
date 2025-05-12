@@ -1,0 +1,17 @@
+# File specifici del sistema operativo
+.DS_Store
+Thumbs.db
+
+# File di configurazione degli editor
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# File di dipendenze (se presenti, es. Node.js)
+# node_modules/
+
+# File di build o log (se presenti)
+# build/
+# dist/
+# *.log 

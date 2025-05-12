@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 450 200">
+    <style>
+        .box { fill: #eef; stroke: #0056b3; stroke-width: 1; rx: 5; }
+        .cdn { fill: #d4edda; stroke: #155724; stroke-width: 1; rx: 5; }
+        .text { font-family: sans-serif; font-size: 10px; text-anchor: middle; fill: #333; }
+        .arrow { fill: none; stroke: #333; stroke-width: 1.5; marker-end: url(#arrowhead); }
+        .line { fill: none; stroke: #aaa; stroke-width: 1; stroke-dasharray: 4 2; }
+    </style>
+    <defs>
+        <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="0" refY="3.5" orient="auto">
+            <polygon points="0 0, 10 3.5, 0 7" fill="#333" />
+        </marker>
+    </defs>
+
+    <text x="225" y="20" class="text" style="font-size: 12px; font-weight: bold;">Flusso Dati Gestione Immagini Articolo</text>
+
+    <!-- Ad Hoc Revolution -->
+    <rect x="10" y="50" width="120" height="100" fill="#f8f9fa" stroke="#ccc" />
+    <text x="70" y="65" class="text" style="font-weight: bold;">Ad Hoc Revolution</text>
+
+    <rect x="20" y="80" width="100" height="40" class="box"/>
+    <text x="70" y="98" class="text">Anagrafica Articolo
+        <tspan x="70" dy="12">(+ Campo URL CDN)</tspan>
+    </text>
+
+    <!-- CDN -->
+    <rect x="290" y="75" width="150" height="50" class="cdn"/>
+    <text x="365" y="93" class="text">CDN (Bucket Immagini)
+        <tspan x="365" dy="12">img_articolo_123.jpg</tspan>
+        <tspan x="365" dy="12">img_articolo_456.png</tspan>
+    </text>
+
+    <!-- Collegamenti -->
+    <path d="M120 100 Q 200 50, 290 90" class="arrow" />
+    <text x="205" y="70" class="text" style="font-size: 9px;">Memorizza/Recupera URL</text>
+
+    <path d="M290 110 Q 200 150, 120 120" class="line" />
+     <text x="205" y="140" class="text" style="font-size: 9px; fill: #aaa;">Immagine referenziata</text>
+
+</svg> 

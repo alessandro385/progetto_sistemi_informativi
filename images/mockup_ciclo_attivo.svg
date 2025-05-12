@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 450 300">
+    <style>
+        .bg { fill: #f9f9f9; }
+        .panel { fill: white; stroke: #ccc; stroke-width: 1; }
+        .header { fill: #eef; stroke: #ccc; stroke-width: 1; }
+        .text { font-family: sans-serif; font-size: 10px; fill: #555; }
+        .title { font-size: 12px; font-weight: bold; fill: #333; }
+        .button { fill: #007bff; stroke: #0056b3; stroke-width: 0.5; rx: 3; }
+        .button-text { font-size: 9px; fill: white; text-anchor: middle; }
+    </style>
+
+    <rect x="0" y="0" width="450" height="300" class="bg" />
+
+    <!-- Pannello Lista Ordini -->
+    <rect x="10" y="30" width="150" height="250" class="panel" />
+    <rect x="10" y="30" width="150" height="25" class="header" />
+    <text x="85" y="48" class="title" text-anchor="middle">Lista Ordini Clienti</text>
+    <text x="20" y="70" class="text">Ordine #1001 - Cliente A</text>
+    <rect x="20" y="60" width="130" height="15" fill="#d0e0ff" stroke="none" />
+    <text x="20" y="90" class="text">Ordine #1002 - Cliente B</text>
+    <text x="20" y="110" class="text">Ordine #1003 - Cliente A</text>
+
+    <!-- Pannello Dettaglio Ordine -->
+    <rect x="170" y="30" width="270" height="250" class="panel" />
+    <rect x="170" y="30" width="270" height="25" class="header" />
+    <text x="305" y="48" class="title" text-anchor="middle">Dettaglio Ordine #1001</text>
+
+    <text x="180" y="70" class="text">Cliente: Cliente A S.p.A.</text>
+    <text x="180" y="85" class="text">Data: 15/05/2024</text>
+    <text x="180" y="100" class="text">Stato: Confermato</text>
+
+    <rect x="180" y="120" width="250" height="20" class="header" />
+    <text x="190" y="134" class="text" font-weight="bold">Articolo</text>
+    <text x="300" y="134" class="text" font-weight="bold">Qtà</text>
+    <text x="340" y="134" class="text" font-weight="bold">Prezzo</text>
+    <text x="390" y="134" class="text" font-weight="bold">Totale</text>
+
+    <text x="185" y="154" class="text">T-SHIRT-BLU-M</text>
+    <text x="305" y="154" class="text">10</text>
+    <text x="340" y="154" class="text">15.00</text>
+    <text x="390" y="154" class="text">150.00</text>
+
+    <text x="185" y="174" class="text">JEANS-BLK-L</text>
+    <text x="305" y="174" class="text">5</text>
+    <text x="340" y="174" class="text">35.00</text>
+    <text x="390" y="174" class="text">175.00</text>
+
+    <!-- Bottoni Azione -->
+    <rect x="180" y="240" width="80" height="25" class="button" />
+    <text x="220" y="256" class="button-text">Genera DDT</text>
+
+    <rect x="270" y="240" width="80" height="25" class="button" />
+    <text x="310" y="256" class="button-text">Genera Fattura</text>
+
+    <text x="225" y="15" class="title" text-anchor="middle">Mockup Interfaccia Gestione Ordini (Ciclo Attivo)</text>
+
+</svg> 

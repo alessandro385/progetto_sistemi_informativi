@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Struttura Database - Dreamwear</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <header>
+        <h1>Progetto Dreamwear: Implementazione ERP Ad Hoc Revolution</h1>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="presentazione_progetto.html">Presentazione Progetto</a></li>
+                <li><a href="assessment_as_is.html">Assessment AS-IS</a></li>
+                <li><a href="gap_analysis_solution.html">Gap Analysis & Soluzioni</a></li>
+                <li><a href="struttura_database.html" class="active">Struttura Database</a></li>
+                <li><a href="pianificazione_gantt.html">Pianificazione (Gantt)</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="database">
+            <h2>Struttura Database</h2>
+             <div class="content-container two-columns">
+                 <div class="left-column">
+                    <h3>Schema ER (Entity-Relationship) Principale</h3>
+                    <p>Lo schema seguente illustra le tabelle fondamentali definite per la gestione dei dati di Dreamwear all'interno (o in relazione) ad Ad Hoc Revolution, focalizzandosi sulle entità chiave del dominio B2B abbigliamento.</p>
+                     <img src="../images/schema_database_dreamwear.svg" alt="Schema Database ER Dreamwear" style="width:100%; max-width:600px; border:1px solid #ccc;">
+
+                    <h4>Tabelle Dizionario (Look-up Tables)</h4>
+                    <p>Per garantire consistenza e facilitare la selezione, le varianti comuni come colori e taglie sono gestite in tabelle separate (dizionari).</p>
+                    <div style="display: flex; gap: 20px;">
+                        <div>
+                            <h5>Tabella `Colori`</h5>
+                            <ul><li>ID_Colore (PK)</li><li>Descrizione</li></ul>
+                            <i>Valori Esempio:</i>
+                            <ul><li>(1, Rosso)</li><li>(2, Arancione)</li><li>...</li><li>(10, Grigio)</li></ul>
+                        </div>
+                        <div>
+                            <h5>Tabella `Taglie`</h5>
+                            <ul><li>ID_Taglia (PK)</li><li>Codice Taglia</li></ul>
+                             <i>Valori Esempio:</i>
+                            <ul><li>(1, XS)</li><li>(2, S)</li><li>...</li><li>(6, XXL)</li></ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="right-column">
+                    <h3>Spiegazione della Struttura Dati</h3>
+                    <p>La progettazione del database mira a supportare in modo efficiente le operazioni B2B di Dreamwear.</p>
+                    <p><strong>Tabelle Chiave:</strong></p>
+                    <ul>
+                        <li><strong>`Clienti`</strong>: Anagrafica dei clienti B2B (aziende), con dettagli fiscali, commerciali e logistici.</li>
+                        <li><strong>`Articoli`</strong>: Anagrafica prodotti finiti. Include codice, descrizione, prezzo base, e potenzialmente link a campi custom per URL immagine esterna (come definito nella Gap Analysis).</li>
+                        <li><strong>`Colori`</strong>: Tabella dizionario per i colori disponibili.</li>
+                        <li><strong>`Taglie`</strong>: Tabella dizionario per le taglie disponibili.</li>
+                         <li><strong>`Ordini`</strong>: Testa dell'ordine cliente, contiene riferimento al cliente (FK), data, stato, totali.</li>
+                        <li><strong>`RigheOrdine`</strong>: Dettaglio dell'ordine. Collega un ordine (FK) a un articolo specifico (FK), specificando quantità, prezzo applicato, e le varianti scelte tramite riferimenti (FK) alle tabelle `Colori` e `Taglie`.</li>
+                         <li><i>(Potrebbero esistere altre tabelle per Fornitori, Listini, Magazzino, Documenti Fiscali, etc., gestite da Ad Hoc)</i></li>
+                    </ul>
+                     <p><strong>Normalizzazione:</strong></p>
+                    <p>L'uso di tabelle separate per `Colori` e `Taglie` (normalizzazione) evita la duplicazione dei dati nelle righe d'ordine e facilita la gestione centralizzata delle varianti disponibili. Ogni riga d'ordine farà riferimento all'ID univoco del colore e della taglia desiderati.</p>
+                    <p>Questo schema rappresenta una visione logica semplificata. La struttura fisica effettiva all'interno di Ad Hoc Revolution potrebbe essere più complessa e includere molte altre tabelle standard del gestionale.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Gruppo Progetto Sistemi Informativi - Implementazione ERP Dreamwear</p>
+    </footer>
+</body>
+</html> 

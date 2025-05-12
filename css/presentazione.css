@@ -1,0 +1,181 @@
+/* Stili specifici per la pagina presentazione_progetto.html */
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f7f6; /* Un colore di sfondo leggermente diverso */
+    color: #333;
+}
+
+header {
+    background-color: #0056b3; /* Blu istituzionale, come da screenshot */
+    color: white;
+    padding: 1em 0;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.2em;
+}
+
+.main-nav ul {
+    background-color: #004080; /* Un blu più scuro per la barra di navigazione */
+}
+
+.main-nav li a {
+    color: #e6f2ff; /* Testo più chiaro per contrasto */
+}
+
+.main-nav li a.active,
+.main-nav li a:hover {
+    background-color: #007bff; /* Blu più brillante per hover/attivo */
+    color: white;
+}
+
+main {
+    padding: 30px 40px; /* Aumentato padding laterale */
+    max-width: 1100px; /* Ridotto leggermente per non essere troppo largo */
+    margin: 30px auto; /* Aumentato margine verticale */
+    background-color: #ffffff;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08); /* Ombra più morbida */
+    border-radius: 8px;
+}
+
+h2 { /* Titolo principale della sezione */
+    color: #0056b3;
+    text-align: center;
+    font-size: 2.1em; /* Leggermente ridotto */
+    margin-bottom: 40px; /* Aumentato spazio sotto */
+    border-bottom: 3px solid #0056b3; /* Bordo più spesso */
+    padding-bottom: 15px; /* Aumentato padding sotto */
+}
+
+.section-container {
+    display: flex;
+    flex-direction: column; /* Elementi in colonna per default */
+    gap: 30px; /* Spazio tra mockup e descrizione */
+}
+
+.mockup {
+    /* Stili contenitore per l'SVG */
+    background-color: #ffffff; /* Sfondo bianco come il main */
+    padding: 20px; /* Padding standard */
+    border-radius: 8px;
+    border: 1px solid #e0e0e0; /* Bordo più leggero */
+    box-shadow: none; /* Rimossa ombra interna, usa quella del main */
+    text-align: center;
+    max-width: 800px; /* Aumentata larghezza massima per SVG più grande */
+    margin: 0 auto 40px auto;
+}
+
+.mockup img,
+.mockup svg {
+    display: block; /* Assicura che l'SVG sia un blocco */
+    width: 100%;    /* Forza l'SVG a occupare la larghezza del contenitore */
+    height: auto;   /* Mantiene le proporzioni definite dal viewBox */
+    max-width: 100%; /* Sicurezza aggiuntiva */
+    /* Rimuoviamo altri stili che potrebbero interferire */
+}
+
+.description {
+    background-color: #f9f9f9; /* Sfondo leggermente diverso per distinguerlo */
+    padding: 25px; /* Aumentato padding */
+    border-radius: 8px;
+    border: 1px solid #e9ecef; /* Bordo sottile */
+}
+
+.description h3 {
+    color: #004080;
+    font-size: 1.6em; /* Aumentato */
+    margin-top: 0;
+    margin-bottom: 20px; /* Aumentato spazio sotto */
+    padding-bottom: 10px; /* Spazio sotto il titolo */
+    border-bottom: 1px solid #ced4da; /* Sottolineatura leggera */
+}
+
+.description p, .description ul {
+    font-size: 1.05em; /* Leggermente più grande per leggibilità */
+    color: #495057; /* Colore testo leggermente più scuro */
+    margin-bottom: 18px; /* Aumentato spazio tra paragrafi/lista */
+    line-height: 1.7; /* Aumentata interlinea */
+}
+
+.description ul {
+    padding-left: 25px;
+    list-style-type: square; /* Cambiato stile lista */
+}
+
+.description ul li {
+    margin-bottom: 8px; /* Spazio tra elementi lista */
+}
+
+.description ul li strong {
+    color: #0056b3; /* Blu per i titoli in grassetto nella lista */
+    font-weight: 600; /* Leggermente più marcato */
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #343a40; /* Footer scuro */
+    color: white;
+    font-size: 0.9em;
+    margin-top: 30px;
+}
+
+/* Responsive adjustments per schermi più piccoli, se necessario */
+@media (min-width: 768px) {
+    .section-container {
+        /* Su schermi più grandi, possiamo tornare a due colonne se preferito */
+        /* flex-direction: row; */
+        /* align-items: flex-start; */ /* Allinea gli item all'inizio */
+    }
+    /* .mockup, .description { */
+        /* flex: 1; */ /* Fa sì che entrambi i div occupino metà spazio se in riga */
+    /* } */
+}
+
+/* Stili specifici per l'SVG nella pagina di presentazione */
+.mockup svg {
+    display: block;
+    width: 100%;    /* SVG occupa tutta la larghezza del mockup */
+    height: auto;
+    max-width: 100%;
+}
+
+/* Stili per gli elementi interni dell'SVG */
+.mockup svg .box {
+    fill: #f8f9fa; /* Sfondo box leggermente grigio */
+    stroke: #0056b3;
+    stroke-width: 2; /* Aumentato spessore bordo */
+}
+
+.mockup svg .text {
+    font-family: 'Segoe UI', sans-serif;
+    font-size: 14px; /* Aumentata dimensione font */
+    fill: #343a40;
+    text-anchor: middle;
+}
+
+.mockup svg .arrow {
+    stroke: #0056b3; /* Colore freccia coordinato */
+    stroke-width: 2; /* Aumentato spessore freccia */
+}
+
+.mockup svg marker polygon {
+    fill: #0056b3;
+}
+
+/* Aumenta dimensione del titolo dentro SVG */
+.mockup svg .svg-title {
+    font-size: 18px !important; /* Usiamo una classe specifica per il titolo */
+    font-weight: bold;
+    fill: #004080 !important;
+    text-anchor: middle;
+}
+
+/* Rimosso stile specifico per text[style*=...] perché gestito da attributi inline o dalla classe .text */
+/* Se necessario sovrascrivere lo stile del titolo, si può fare con un ID o classe specifica nell'SVG */ 
