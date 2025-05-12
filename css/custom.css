@@ -122,6 +122,74 @@ main h2 {
     border: 1px solid #eee; /* Aggiunge un bordo leggero */
 }
 
+/* Stili per la Tabella Gantt HTML */
+#gantt-table-container {
+    max-height: 70vh; /* Imposta un'altezza massima per lo scroll verticale se necessario */
+}
+
+.gantt-table {
+    font-size: 0.8rem; /* Riduci la dimensione del font per compattezza */
+    border-collapse: collapse; /* Assicura che i bordi siano singoli */
+}
+
+.gantt-table th,
+.gantt-table td {
+    padding: 0.25rem 0.4rem;
+    text-align: center;
+    vertical-align: middle;
+    border: 1px solid #dee2e6; /* Bordi per tutte le celle */
+    white-space: nowrap; /* Evita che il testo vada a capo nelle celle dati */
+}
+
+.gantt-table thead th {
+    background-color: #e9ecef;
+    font-weight: bold;
+    position: sticky; /* Intestazioni sticky */
+    top: 0;           /* Necessario per sticky-top in container scrollabile */
+    z-index: 10;
+}
+
+.gantt-table tbody tr:hover {
+    background-color: #f8f9fa;
+}
+
+.gantt-table td:nth-child(2) { /* Colonna "Attività" */
+    text-align: left;
+    white-space: normal; /* Consenti a capo per nomi attività lunghi */
+}
+
+/* Stili per le barre del Gantt */
+.gantt-bar {
+    height: 1.2em; /* Altezza della barra */
+    display: block; /* Occupa l'intera cella */
+    margin: 1px 0; /* Piccolo margine per separazione visiva */
+    border-radius: 3px;
+}
+
+.phase-summary td.gantt-bar,
+.phase-summary .gantt-bar {
+    opacity: 0.6;
+}
+
+/* Colori delle fasi (da adattare ai tuoi colori specifici) */
+.phase-1 { background-color: #0d6efd; } /* Blu Bootstrap */
+.phase-2-summary { background-color: #6f42c1; } /* Viola Bootstrap per summary Analisi */
+.phase-2   { background-color: #6f42c1; opacity:0.7;} /* Viola Bootstrap per Analisi Funzionale e GAP */
+.phase-2a  { background-color: #855ccd; } /* Viola più chiaro per sotto-attività Analisi Funzionale */
+.phase-2b  { background-color: #9a75d9; } /* Viola ancora più chiaro per sotto-attività GAP */
+.phase-3-summary { background-color: #198754; } /* Verde Bootstrap per summary Sviluppo */
+.phase-3   { background-color: #198754; opacity: 0.8;} /* Verde Bootstrap per Sviluppo */
+.phase-4-summary { background-color: #ffc107; } /* Giallo Bootstrap per summary Config. */
+.phase-4   { background-color: #ffc107; opacity: 0.8;} /* Giallo Bootstrap per Config. */
+.phase-5-summary { background-color: #fd7e14; } /* Arancio Bootstrap per summary Test */
+.phase-5   { background-color: #fd7e14; opacity: 0.8;} /* Arancio Bootstrap per Test */
+.phase-6-summary { background-color: #dc3545; } /* Rosso Bootstrap per summary Migrazione */
+.phase-6   { background-color: #dc3545; opacity: 0.8;} /* Rosso Bootstrap per Migrazione */
+.phase-7-summary { background-color: #0dcaf0; } /* Ciano Bootstrap per summary Formazione */
+.phase-7   { background-color: #0dcaf0; opacity: 0.8;} /* Ciano Bootstrap per Formazione */
+.phase-go-live-summary { background-color: #6610f2; } /* Indaco Bootstrap per summary Go Live */
+.phase-go-live { background-color: #6610f2; opacity: 0.8;} /* Indaco Bootstrap per Go Live */
+
 /* Footer */
 footer {
     /* Stili footer ereditati da Bootstrap bg-dark */
