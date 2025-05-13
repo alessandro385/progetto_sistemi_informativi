@@ -51,29 +51,47 @@
                 <div class="col-lg-6 mb-4 mb-lg-0" data-aos="fade-right">
                     <div class="mockup-container bg-light p-3 rounded shadow-sm">
                         <!-- SVG inline -->
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 160" class="img-fluid">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 170" class="img-fluid project-flow-svg">
                              <defs>
-                                 <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="0" refY="3.5" orient="auto">
-                                     <polygon points="0 0, 10 3.5, 0 7" /> <!-- Fill gestito da CSS -->
+                                 <linearGradient id="boxGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                     <stop offset="0%" class="gradient-start" />
+                                     <stop offset="100%" class="gradient-end" />
+                                 </linearGradient>
+                                 <filter id="dropShadow" x="-20%" y="-20%" width="140%" height="140%">
+                                     <feGaussianBlur in="SourceAlpha" stdDeviation="2"/>
+                                     <feOffset dx="1" dy="1" result="offsetblur"/>
+                                     <feMerge>
+                                         <feMergeNode/>
+                                         <feMergeNode in="SourceGraphic"/>
+                                     </feMerge>
+                                 </filter>
+                                 <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="0" refY="3.5" orient="auto" class="arrow-marker">
+                                     <polygon points="0 0, 10 3.5, 0 7" />
                                  </marker>
                              </defs>
                              <!-- Boxes -->
-                             <rect x="10" y="60" width="110" height="60" rx="5" class="box"/>
-                             <text x="65" y="85" class="text" text-anchor="middle">Dreamwear S.r.l.
-                                 <tspan x="65" dy="1.4em">(B2B Abbigliamento)</tspan>
-                             </text>
-                             <rect x="145" y="60" width="110" height="60" rx="5" class="box"/>
-                             <text x="200" y="85" class="text" text-anchor="middle">Implementazione
-                                 <tspan x="200" dy="1.4em">Ad Hoc Revolution</tspan>
-                             </text>
-                             <rect x="280" y="60" width="110" height="60" rx="5" class="box"/>
-                             <text x="335" y="85" class="text" text-anchor="middle">Obiettivo:
-                                 <tspan x="335" dy="1.4em">Ottimizzazione</tspan> <!-- Shortened text -->
-                             </text>
+                             <g class="svg-box-group" style="filter: url(#dropShadow);">
+                                 <rect x="10" y="60" width="110" height="60" rx="8" class="svg-box"/>
+                                 <text x="65" y="80" class="svg-box-text" text-anchor="middle">Dreamwear S.r.l.
+                                     <tspan x="65" dy="1.3em">(B2B Abbigliamento)</tspan>
+                                 </text>
+                             </g>
+                             <g class="svg-box-group" style="filter: url(#dropShadow);">
+                                 <rect x="145" y="60" width="110" height="60" rx="8" class="svg-box"/>
+                                 <text x="200" y="80" class="svg-box-text" text-anchor="middle">Implementazione
+                                     <tspan x="200" dy="1.3em">Ad Hoc Revolution</tspan>
+                                 </text>
+                             </g>
+                             <g class="svg-box-group" style="filter: url(#dropShadow);">
+                                 <rect x="280" y="60" width="110" height="60" rx="8" class="svg-box"/>
+                                 <text x="335" y="80" class="svg-box-text" text-anchor="middle">Obiettivo:
+                                     <tspan x="335" dy="1.3em">Ottimizzazione</tspan>
+                                 </text>
+                             </g>
                              <!-- Arrows -->
-                             <line x1="120" y1="90" x2="145" y2="90" class="arrow" marker-end="url(#arrowhead)" />
-                             <line x1="255" y1="90" x2="280" y2="90" class="arrow" marker-end="url(#arrowhead)" />
-                             <text x="200" y="35" class="svg-title">Flusso del Progetto (Concept)</text>
+                             <line x1="120" y1="90" x2="135" y2="90" class="svg-arrow" marker-end="url(#arrowhead)" />
+                             <line x1="255" y1="90" x2="270" y2="90" class="svg-arrow" marker-end="url(#arrowhead)" />
+                             <text x="200" y="35" class="svg-main-title">Flusso del Progetto (Concept)</text>
                         </svg>
                     </div>
                 </div>

@@ -54,6 +54,95 @@ body {
     text-anchor: middle;
 }
 
+/* Nuovi stili per SVG Flusso Progetto */
+.project-flow-svg .svg-box {
+    fill: url(#boxGradient); /* Applica il gradiente */
+    stroke: var(--bs-primary-darker, #004185); /* Un bordo leggermente più scuro del primario */
+    stroke-width: 1;
+    transition: transform 0.2s ease-out;
+}
+
+.project-flow-svg .svg-box-group:hover .svg-box {
+    transform: translateY(-2px); /* Leggero effetto hover */
+}
+
+.project-flow-svg .gradient-start {
+    stop-color: var(--bs-primary-lighter, #e6f0ff); /* Un azzurro molto chiaro */
+    stop-opacity: 1;
+}
+
+.project-flow-svg .gradient-end {
+    stop-color: var(--bs-primary-light, #b3d7ff); /* Un azzurro un po' più scuro */
+    stop-opacity: 1;
+}
+
+.project-flow-svg .svg-box-text {
+    font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+    font-size: 10.5px;
+    font-weight: 500; /* SemiBold */
+    fill: var(--bs-primary-darker, #003366); /* Testo più scuro per contrasto */
+    text-anchor: middle;
+    pointer-events: none; /* Per non interferire con l'hover del box */
+}
+
+.project-flow-svg .svg-arrow {
+    stroke: var(--bs-secondary); /* Grigio più scuro per le frecce */
+    stroke-width: 2;
+}
+
+.project-flow-svg .arrow-marker polygon {
+    fill: var(--bs-secondary);
+}
+
+.project-flow-svg .svg-main-title {
+    font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+    font-size: 16px;
+    font-weight: 600; /* Bold */
+    fill: var(--bs-primary);
+    text-anchor: middle;
+}
+
+/* Stili specifici per SVG Integrazione E-commerce */
+.integration-schema-svg .svg-box {
+    /* Stessi stili di .project-flow-svg .svg-box o personalizzati se necessario */
+    /* fill: url(#boxGradientBlue); viene applicato inline nell'SVG */
+    stroke: var(--bs-primary-darker, #004185);
+    stroke-width: 1;
+}
+
+.integration-schema-svg .svg-box-text {
+    /* Stessi stili di .project-flow-svg .svg-box-text o personalizzati */
+    font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+    font-size: 12px; /* Leggermente più grande per i box principali */
+    font-weight: 500;
+    fill: var(--bs-primary-darker, #003366);
+    text-anchor: middle;
+}
+
+.integration-schema-svg .svg-arrow-dashed {
+    stroke: var(--bs-secondary); 
+    stroke-width: 1.5;
+    stroke-dasharray: 4, 2; /* Linea tratteggiata */
+}
+
+.integration-schema-svg .arrow-marker-dark polygon {
+    fill: var(--bs-secondary);
+}
+
+.integration-schema-svg .svg-arrow-label {
+    font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+    font-size: 10px;
+    font-weight: 500;
+    fill: #333;
+}
+
+.integration-schema-svg .svg-arrow-label-small {
+    font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+    font-size: 8.5px;
+    font-weight: 400;
+    fill: #555;
+}
+
 /* Stili comuni per le sezioni */
 main h2 {
      color: var(--bs-primary);
@@ -91,6 +180,22 @@ main h2 {
 
 .table th {
     background-color: var(--bs-light);
+}
+
+/* Stili per tabella Piano dei Conti in Assessment */
+.accounts-plan-table-container {
+    max-height: 15rem; /* Circa 6-7 righe + header. Regolabile. */
+    overflow-y: auto;
+    border: 1px solid #dee2e6; /* Bordo per rendere visibile il contenitore scrollabile */
+    border-radius: 0.25rem;
+    margin-bottom: 1rem; /* Aggiungo un po' di spazio sotto */
+}
+
+.accounts-plan-table-container table thead th {
+    position: sticky; /* Rende l'header della tabella fisso durante lo scroll verticale */
+    top: 0;
+    z-index: 1; /* Assicura che l'header sia sopra il contenuto scrollabile */
+    /* background-color: var(--bs-primary); /* Già gestito da .table-primary in thead */
 }
 
 /* Stili per Gap Analysis (esempio) */
