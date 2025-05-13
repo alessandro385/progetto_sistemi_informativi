@@ -39,6 +39,213 @@
 
         <section id="gap-analysis" class="mb-5">
 
+            <p class="fst-italic text-center mb-4">*Esempio a scopo didattico.</p>
+
+            <div class="card shadow-sm mb-4" data-aos="fade-up">
+                <div class="card-header bg-light">
+                    <h3 class="mb-0">Sommario</h3>
+                </div>
+                <div class="card-body">
+                    <ol>
+                        <li><a href="#info-generali">Informazioni Generali</a></li>
+                        <li><a href="#ciclo-attivo">Ciclo Attivo</a></li>
+                        <li><a href="#ciclo-passivo">Ciclo Passivo</a></li>
+                        <li><a href="#contabilita-finanza">Contabilità e Finanza</a></li>
+                        <li><a href="#sito-web">Sito web – E-commerce</a></li>
+                    </ol>
+                </div>
+            </div>
+
+            <div class="card shadow-sm mb-4" data-aos="fade-up" id="info-generali">
+                <div class="card-header bg-secondary text-white">
+                    <h3 class="mb-0">1 - Informazioni Generali</h3>
+                </div>
+                <div class="card-body">
+                     <p><strong>Documento:</strong> Assessment</p>
+                     <p><strong>Ver.:</strong> 1.0</p>
+                     <p><strong>Stato:</strong> Chiuso</p>
+                     <p><strong>Data:</strong></p>
+                     <p><strong>File:</strong> Gap Analysis.doc</p>
+                     <p><strong>Autore:</strong></p>
+                     <p><strong>Progetto:</strong> Nuovo Sistema Informativo Integrato Spazioporto Arcadia Planitia - Marte</p>
+                     <p><strong>Approvato da:</strong></p>
+                     <p><strong>Rivisto da:</strong></p>
+                </div>
+            </div>
+
+            <div class="card shadow-sm mb-4" data-aos="fade-up" id="ciclo-attivo">
+                <div class="card-header bg-secondary text-white">
+                    <h3 class="mb-0">2 - Ciclo Attivo</h3>
+                </div>
+                <div class="card-body">
+                    <h4>TABELLE FONDAMENTALI:</h4>
+                    <p>Tracciati Cliente, Articolo, Colore, Taglia e Ordine</p>
+                    <p>Le tabelle taglie e colori saranno tabelle dizionario con valori prestabiliti:</p>
+                    <ul>
+                        <li><strong>Colori:</strong> Rosso, arancione, giallo, verde, blu, indaco, viola, bianco, nero, grigio.</li>
+                        <li><strong>Taglie:</strong> XS, S, M, L, XL, XXL</li>
+                    </ul>
+
+                    <h5 class="mt-4">CLIENTI</h5>
+                    <div class="table-responsive">
+                        <table class="table table-striped table-bordered">
+                            <thead class="table-light">
+                                <tr><th>Campo</th><th>Tipo</th><th>Descrizione</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>ID</td><td>INT</td><td></td></tr>
+                                <tr><td>RAGIONE SOCIALE</td><td>VARCHAR</td><td></td></tr>
+                                <tr><td>INDIRIZZO</td><td>VARCHAR</td><td>Riferimento tabella INDIRIZZO</td></tr>
+                                <tr><td>PARTITA IVA</td><td>FLOAT</td><td></td></tr>
+                                <tr><td>METODO PAGAMENTO</td><td>INT</td><td></td></tr>
+                                <tr><td>INDIRIZZO CONSEGNA</td><td>VARCHAR</td><td>Riferimento tabella INDIRIZZO</td></tr>
+                                <tr><td>CATEGORIA CONTABILE</td><td>VARCHAR</td><td></td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h5 class="mt-4">ARTICOLI</h5>
+                     <div class="table-responsive">
+                        <table class="table table-striped table-bordered">
+                            <thead class="table-light">
+                                <tr><th>Campo</th><th>Tipo</th><th>Descrizione</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>ID</td><td>INT</td><td></td></tr>
+                                <tr><td>NOME</td><td>VARCHAR</td><td></td></tr>
+                                <tr><td>DESCRIZIONE</td><td>VARCHAR</td><td></td></tr>
+                                <tr><td>PREZZO</td><td>FLOAT</td><td></td></tr>
+                                <tr><td>DISPONIBILITA' </td><td>INT</td><td></td></tr>
+                                <tr><td>CATEGORIA CONTABILE</td><td>VARCHAR</td><td></td></tr>
+                                <tr><td>IVA</td><td>FLOAT</td><td></td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h5 class="mt-4">COLORI</h5>
+                     <div class="table-responsive">
+                        <table class="table table-striped table-bordered">
+                             <thead class="table-light">
+                                <tr><th>Campo</th><th>Tipo</th><th>Descrizione</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>ID</td><td>INT</td><td></td></tr>
+                                <tr><td>NOME</td><td>VARCHAR</td><td></td></tr>
+                                <tr><td>DESCRIZIONE</td><td>VARCHAR</td><td></td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h5 class="mt-4">TAGLIE</h5>
+                     <div class="table-responsive">
+                        <table class="table table-striped table-bordered">
+                             <thead class="table-light">
+                                <tr><th>Campo</th><th>Tipo</th><th>Descrizione</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>ID</td><td>INT</td><td></td></tr>
+                                <tr><td>NOME</td><td>VARCHAR</td><td></td></tr>
+                                <tr><td>DESCRIZIONE</td><td>VARCHAR</td><td></td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h5 class="mt-4">INDIRIZZO</h5>
+                    <div class="table-responsive">
+                        <table class="table table-striped table-bordered">
+                            <thead class="table-light">
+                                <tr><th>Campo</th><th>Tipo</th><th>Descrizione</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>ID</td><td>INT</td><td></td></tr>
+                                <tr><td>VIA</td><td>VARCHAR</td><td></td></tr>
+                                <tr><td>LOCALITA' </td><td>VARCHAR</td><td></td></tr>
+                                <tr><td>CITTA' </td><td>VARCHAR</td><td></td></tr>
+                                <tr><td>NAZIONE</td><td>VARCHAR</td><td></td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h4 class="mt-4">IMPORTAZIONE ORDINI CLIENTI E-COMMERCE A ERP</h4>
+                    <h5 class="mt-3">ORDINI</h5>
+                    <div class="table-responsive">
+                         <table class="table table-striped table-bordered">
+                             <thead class="table-light">
+                                <tr><th>Campo</th><th>Tipo</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>ID ORDINE</td><td>INT</td></tr>
+                                <tr><td>ID ARTICOLO</td><td>INT</td></tr>
+                                <tr><td>ID CLIENTE</td><td>INT</td></tr>
+                                <tr><td>INDIRIZZO CONSEGNA</td><td>INT</td></tr> <!-- Modificato da VARCHAR a INT per coerenza ID -->
+                                <tr><td>ID COLORE</td><td>INT</td></tr>
+                                <tr><td>ID TAGLIA</td><td>INT</td></tr>
+                                <tr><td>QUANTITA' </td><td>INT</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h5 class="mt-4">ESEMPIO</h5>
+                    <div class="table-responsive">
+                        <table class="table table-striped table-bordered">
+                             <thead class="table-light">
+                                <tr><th>ID ORDINE</th><th>ID ARTICOLO</th><th>ID CLIENTE</th><th>INDIRIZZO CONSEGNA (ID)</th><th>ID COLORE</th><th>ID TAGLIA</th><th>QUANTITA' </th></tr>
+                             </thead>
+                             <tbody>
+                                <tr><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td></tr>
+                                <tr><td>2</td><td>2</td><td>2</td><td>2</td><td>1</td><td>2</td><td>1</td></tr>
+                                <tr><td></td><td>1</td><td>3</td><td>2</td><td>1</td><td>2</td><td>4</td></tr>
+                                <tr><td>1</td><td>1</td><td>1</td><td>3</td><td>1</td><td>4</td><td>4</td></tr>
+                                <tr><td>2</td><td>2</td><td>5</td><td>3</td><td>2</td><td>7</td><td>2</td></tr>
+                             </tbody>
+                         </table>
+                     </div>
+
+                </div>
+            </div>
+
+
+            <div class="card shadow-sm mb-4" data-aos="fade-up" id="ciclo-passivo">
+                <div class="card-header bg-secondary text-white">
+                     <h3 class="mb-0">3 - Ciclo Passivo</h3>
+                 </div>
+                <div class="card-body">
+                    <p>Ciclo passivo NORMALE: ORDINE – DDT – FATTURA</p>
+                    <p>Ciclo passivo cliente ESTERO = ORDINE – DDT – FATTURA</p>
+                    <p>La valuta varia in base al cambio giornaliero, il prezzo dell'ordine sarà diverso del prezzo in fattura al momento del saldaconto, questo cambierà in base alla fluttuazione del cambio, potrà essere un valore positivo o negativo.</p>
+                 </div>
+            </div>
+
+             <div class="card shadow-sm mb-4" data-aos="fade-up" id="contabilita-finanza">
+                <div class="card-header bg-secondary text-white">
+                     <h3 class="mb-0">5 - Contabilità e Finanza</h3>
+                 </div>
+                <div class="card-body">
+                     <p>Dovrà essere implementato l'export dei dati contabili verso il programma del commercialista secondo il tracciato fornito in data…</p>
+                 </div>
+            </div>
+
+            <div class="card shadow-sm mb-4" data-aos="fade-up" id="sito-web">
+                <div class="card-header bg-secondary text-white">
+                     <h3 class="mb-0">6 - Sito web – E-commerce</h3>
+                 </div>
+                <div class="card-body">
+                    <p>Dovrà essere implementata l'interfaccia tra Ad hoc e l'attuale sito e-commerce proprietario.</p>
+                    <p>Ad Hoc sarà il master per le anagrafiche seguenti:</p>
+                    <ul>
+                        <li>Clienti e tabelle collegate</li>
+                        <li>Articoli e tabelle collegate</li>
+                    </ul>
+                    <p>E-commerce provvederà ad esportare Ad Hoc per gli ordini clienti in tempo reale.</p>
+                    <p>Gli ordini entreranno nel ciclo attivo per la fatturazione.</p>
+                    <p>Esempio del sito : <a href="assets-gap analysis/Screenshot 2025-05-12 165622.png" target="_blank">Visualizza Screenshot</a></p> <!-- Link allo screenshot -->
+                 </div>
+             </div>
+
+            <!-- Qui sotto mantengo le card originali di Gap/Soluzione, potrebbero essere utili -->
+            <hr class="my-5">
+            <h2 class="text-center mb-4">Analisi Gap Specifici e Soluzioni</h2>
+
             <div class="card gap-card shadow-sm mb-4" data-aos="fade-up">
                 <div class="card-header bg-primary text-white">
                     <h3 class="mb-0">Gap 1: Gestione Varianti Articolo (Taglia/Colore)</h3>
